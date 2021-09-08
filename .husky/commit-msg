@@ -1,0 +1,20 @@
+#!/bin/sh
+. "$(dirname "$0")/_/husky.sh"
+
+npx --no-install commitlint --edit
+
+echo 'Checking Styles and Types before committing'
+
+npm run lint || 
+(
+    echo 'ESLint check failed.';
+    false;
+)
+
+npm run typescript || 
+(
+    echo 'Type check failed.';
+    false;
+)
+
+
