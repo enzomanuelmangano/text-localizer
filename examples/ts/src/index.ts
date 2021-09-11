@@ -1,13 +1,10 @@
-import { TextLocalizer } from '../../../lib';
-import axios from 'axios';
-
-const fetchUsTranslations = async () =>
-  (await axios.get('http://localhost:3000/')).data;
+import { TextLocalizer } from 'text-localizer';
+import { fetchUsTranslations } from './l10n/strings/us';
 
 (async () => {
   const localizer = new TextLocalizer({
-    en: import('./l10n/en-UK'),
-    it: import('./l10n/it-IT.json'),
+    en: import('./l10n/strings/en.js'),
+    it: import('./l10n/strings/it.json'),
     us: fetchUsTranslations,
   });
 

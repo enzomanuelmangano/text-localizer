@@ -1,4 +1,4 @@
-import it from './it-IT.json';
+import it from './it.json';
 
 export default {
   ...it,
