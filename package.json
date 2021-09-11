@@ -10,7 +10,9 @@
   "scripts": {
     "typescript": "tsc --noEmit",
     "lint": "eslint \"**/*.{js,ts,tsx}\"",
-    "start": "yarn tsc && node lib/index.js"
+    "start": "yarn tsc && node lib/index.js",
+    "check-node-ts": "yarn tsc && cd examples/node-ts && yarn start && cd ../..",
+    "check-node-js": "yarn tsc && cd examples/node-ts && yarn start && cd ../.."
   },
   "keywords": [
     "localization",

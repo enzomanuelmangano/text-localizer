@@ -29,7 +29,7 @@ type Objectify<
 
 type ValueHandler<T extends string> = Objectify<T> extends undefined
   ? T
-  : (params: Partial<Objectify<T>>) => string;
+  : (params: Required<Objectify<T>>) => string;
 
 export type TranslationsParser<T extends Record<string, string>> = {
   [K in keyof T]: ValueHandler<T[K]>;

@@ -4,57 +4,50 @@ type TranslationStrings<T> =
   | ExtractDefault<T>
   | Record<string, string | Record<string, string>>;
 
-type TextLocalizerParams<L extends string, T, FallbackT> = Record<
-  L,
-  TranslationStrings<T> | Promise<TranslationStrings<T>>
-> & {
-  fallback?: ExtractDefault<FallbackT>;
-};
+type TranslationsParam<T> =
+  | TranslationStrings<T>
+  | Promise<TranslationStrings<T>>
+  | (() => TranslationStrings<T>)
+  | (() => Promise<TranslationStrings<T>>);
 
-type Translations<T, Fallback> = Fallback extends {} ? Fallback : T;
+type TextLocalizerParams<L extends string, T> = Record<L, TranslationsParam<T>>;
 
-class TextLocalizer<L extends string, T, FallbackT = undefined> {
-  private _input: TextLocalizerParams<L, T, FallbackT>;
+class TextLocalizer<L extends string, T> {
+  private _input: TextLocalizerParams<L, T>;
 
-  private _fallback: ExtractDefault<FallbackT> | undefined;
-  private _translations: Translations<T, FallbackT> | undefined;
+  private _translations: T | undefined;
 
-  constructor(input: TextLocalizerParams<L, T, FallbackT>) {
+  constructor(input: TextLocalizerParams<L, T>) {
     this._input = input;
-
-    if (input.fallback) {
-      this._fallback = input['fallback'];
-    }
   }
 
   public getLanguages(): L[] {
     return Object.keys(this._input) as L[];
   }
 
-  async setLanguage(language: L): Promise<void> {
-    let translations = (await this._input[language]) as any;
+  private async resolveTranslations(param: TranslationsParam<T>): Promise<T> {
+    if (typeof param == 'function') {
+      const functionParam = param as
+        | (() => TranslationStrings<T>)
+        | (() => Promise<TranslationStrings<T>>);
 
-    if (translations['default'] !== null) {
+      return (await functionParam?.()) as T;
+    }
+
+    let translations = (await param) as any;
+    if (translations?.['default'] != null) {
       translations = translations['default'] as any;
-      delete translations['default'];
     }
 
-    if (!this._fallback) {
-      this._translations = translations;
-      return;
-    }
-
-    const fallbackTranslations = await this._fallback;
-
-    this._translations = {
-      ...fallbackTranslations,
-      ...translations,
-    };
+    return translations as T;
   }
 
-  get translations(): Translations<T, FallbackT> {
-    if (!this._translations) throw Error('Uninitialized Translations');
-    return this._translations;
+  async setLanguage(language: L): Promise<void> {
+    this._translations = await this.resolveTranslations(this._input[language]);
+  }
+
+  get translations(): T {
+    return this._translations as T;
   }
 }
 
