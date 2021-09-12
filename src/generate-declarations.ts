@@ -1,7 +1,27 @@
-#!/usr/bin/env node
+#!/usr/bin/env ts-node-script
+
+// I used ts-node-script instead of
+// the node executable in order to enable
+// .ts file imports
 
 import fs from 'fs';
 import path from 'path';
+
+const formatTranslationsWithDocs = ({
+  language,
+  translations,
+}: {
+  language: string;
+  translations: Record<string, any>;
+}) => {
+  const translationKeys = Object.keys(translations);
+
+  return `{\n${translationKeys.reduce(
+    (stringifiedTranslations, key) =>
+      `${stringifiedTranslations}\n/**\n* @${language} ${translations[key]}\n*/\n${key}: '${translations[key]}';`,
+    ''
+  )}\n}`;
+};
 
 const resolveTranslation = async (translations: Record<string, any>) => {
   let strings;
@@ -26,31 +46,38 @@ const resolveTranslation = async (translations: Record<string, any>) => {
 
   const PATH = path.relative(scriptFolder, stringsDestination);
 
-  const strings = fs.readdirSync(stringsDestination).map((strings) => {
-    console.log(strings);
-    const [lang, ext] = strings.split('.');
-    return { lang, ext };
-  });
+  const strings = fs
+    .readdirSync(stringsDestination)
+    .filter(
+      (fileName) =>
+        (fileName.includes('.ts') ||
+          fileName.includes('.js') ||
+          fileName.includes('.json')) &&
+        !fileName.includes('.d.ts')
+    )
+    .map((strings) => {
+      const [lang, ext] = strings.split('.');
+      // TODO: error definition
+      if (!lang || !ext) throw Error();
+      return { lang, ext };
+    });
 
-  const importStuffs = strings.map(async ({ lang, ext }) => {
+  const importTranslations = strings.map(async ({ lang, ext }) => {
     const fileName = ext === 'json' ? `${lang}.${ext}` : `${lang}`;
-    // TODO:
-    const translations = await import(
-      `${scriptFolder}/${PATH.replace('src', 'lib')}/${fileName}`
-    );
+    const translations = await import(`${scriptFolder}/${PATH}/${fileName}`);
+
     return { lang, data: await resolveTranslation(translations) };
   });
 
-  const stuffs = await Promise.all(importStuffs);
-  console.log(stuffs);
+  const translations = await Promise.all(importTranslations);
 
   const COMMENTS = ['/* eslint-disable */'];
 
-  const translations = stuffs.map(
+  const typedTranslations = translations.map(
     ({ lang, data }) =>
-      `type ${lang} = import('text-localizer').TranslationsParser<${JSON.stringify(
-        data
-      )}>`
+      `type ${lang} = import('text-localizer').TranslationsParser<${formatTranslationsWithDocs(
+        { language: lang, translations: data }
+      )}>;`
   );
 
   const languages = strings.map(({ lang }) => lang);
@@ -62,12 +89,16 @@ const resolveTranslation = async (translations: Record<string, any>) => {
 
   const fileStructure = [
     ...COMMENTS,
-    ...translations,
+    ...typedTranslations,
     AppTranslations,
     Languages,
   ].join('\n\n');
 
-  fs.writeFile('src/l10n/translations.d.ts', fileStructure, (err) => {
-    if (err) throw err;
-  });
+  fs.writeFile(
+    `${stringsDestination}/translations.d.ts`,
+    fileStructure,
+    (err) => {
+      if (err) throw err;
+    }
+  );
 })();
