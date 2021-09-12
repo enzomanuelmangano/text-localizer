@@ -22,13 +22,6 @@ type it = import('text-localizer').TranslationsParser<{
   favouritesFun: 'Controlla subito i tuoi preferiti {{ now }}';
 }>;
 
-type us = import('text-localizer').TranslationsParser<{
-  /**
-   * @us bla
-   */
-  someStuffs: 'bla';
-}>;
-
 type AppTranslations = en | it;
 
 type Languages = 'en' | 'it';

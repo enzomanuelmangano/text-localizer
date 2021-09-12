@@ -12,6 +12,8 @@ type TranslationsParam<T> =
 
 type TextLocalizerParams<L extends string, T> = Record<L, TranslationsParam<T>>;
 
+const BRACKETS_PATTERN_REGEX = /\{\{[a-zA-Z ]+\}\}/g;
+
 // This function will create a regex in order to extract
 // this pattern from a string `{{ ${key} }}`
 const regexByKey = (key: string) =>
@@ -46,13 +48,14 @@ type WithHelpers<L, T> = T & {
   currentLanguage: L;
 };
 
-class TextLocalizer<L extends string, T> {
+class TextLocalizer<L extends string, T extends Record<string, any>> {
   private _input: TextLocalizerParams<L, T>;
 
   private _translations: T | undefined;
   private _currentLanguage: L | undefined;
   private _fallbackLanguage: L | undefined;
   private _fallbackTranslations: T | undefined;
+  private _formattedFunctionsEnabled: boolean = false;
 
   constructor(input: TextLocalizerParams<L, T>) {
     this._input = input;
@@ -92,10 +95,13 @@ class TextLocalizer<L extends string, T> {
   public async setOptions({
     fallback,
     language,
+    formattedFunctionsEnabled,
   }: {
     fallback: L;
     language: L;
+    formattedFunctionsEnabled?: boolean;
   }) {
+    this._formattedFunctionsEnabled = formattedFunctionsEnabled ?? false;
     await Promise.all([this.setFallback(fallback), this.setLanguage(language)]);
   }
 
@@ -114,9 +120,26 @@ class TextLocalizer<L extends string, T> {
     const translationsInput = this._input[language] as TranslationsParam<T>;
 
     const translations = await parseTranslations(translationsInput);
-    if (translations) return translations;
+    if (!translations) throw Error();
 
-    throw Error();
+    if (!this._formattedFunctionsEnabled) return translations;
+
+    return Object.keys(translations).reduce((t, key) => {
+      const value = (() => {
+        const translationsValue = translations[key];
+        if (
+          typeof translationsValue === 'string' &&
+          translationsValue.match(BRACKETS_PATTERN_REGEX)
+        ) {
+          return (variables: Record<string, number | string>) => {
+            return this.formatText(translationsValue, variables);
+          };
+        }
+        return translationsValue;
+      })();
+
+      return { ...t, [key]: value };
+    }, {}) as T;
   }
 }
 
