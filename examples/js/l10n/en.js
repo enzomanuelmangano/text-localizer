@@ -1,4 +1,4 @@
-const it = require('./it-IT.json');
+const it = require('./it.json');
 
 module.exports = {
   ...it,
