@@ -1,4 +1,4 @@
-import { TextLocalizer } from 'text-localizer';
+import { TextLocalizer } from '../../../lib';
 
 (async () => {
   const localizer = new TextLocalizer({
@@ -6,8 +6,11 @@ import { TextLocalizer } from 'text-localizer';
     it: import('./l10n/it.json'),
   });
 
-  await localizer.setLanguage('en');
-  console.log(localizer.translations.favourites);
-  await localizer.setLanguage('it');
-  console.log(localizer.translations.favourites);
+  await localizer.setOptions({ fallback: 'it', language: 'en' });
+
+  const translations = localizer.getTranslations();
+
+  console.log(
+    translations.formatText(translations.favouritesFun, { now: 'ora' })
+  );
 })();
