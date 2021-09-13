@@ -22,7 +22,7 @@ export const formatTranslationsWithDocs = ({
 
     const assignment =
       typeof value === 'string'
-        ? `${key}: '${value}';`
+        ? `${key}: "${value}";`
         : `${key}: ${formatTranslationsWithDocs({
             language,
             translations: value,
