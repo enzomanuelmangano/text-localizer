@@ -16,7 +16,7 @@
     "generate-dts": "yarn tsc && node lib/generate-declarations.js"
   },
   "bin": {
-    "gen-l10n": "lib/generate-declarations.js"
+    "generate-l10n": "lib/generator/index.js"
   },
   "keywords": [
     "localization",

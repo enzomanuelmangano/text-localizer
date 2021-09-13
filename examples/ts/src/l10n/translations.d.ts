@@ -1,3 +1,7 @@
+/*
+* GENERATED CODE - DO NOT MODIFY BY HAND
+*/
+
 /* eslint-disable */
 
 type en<Options> = import('text-localizer').TranslationsParser<{
