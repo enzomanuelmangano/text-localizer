@@ -2,8 +2,9 @@ import { TextLocalizer } from '../../../lib';
 
 (async () => {
   const localizer = new TextLocalizer<Languages, AppTranslations>({
-    en: import('./l10n/en.js'),
+    en: import('./l10n/en'),
     it: import('./l10n/it.json'),
+    us: (await import('./l10n/us')).fetchUsTranslations,
   });
 
   await localizer.setOptions({
@@ -12,7 +13,8 @@ import { TextLocalizer } from '../../../lib';
     formattedFunctionsEnabled: true,
   });
 
-  const translations = localizer.getTranslations();
+  await localizer.setLanguage('us');
+  const usTranslations = localizer.getTranslations();
 
-  console.log(translations.favouritesFun);
+  console.log(usTranslations.favouritesFun({ now: 'bla' }));
 })();

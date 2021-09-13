@@ -31,6 +31,13 @@ type ValueHandler<T extends string> = Objectify<T> extends undefined
   ? T
   : (params: Required<Objectify<T>>) => string;
 
-export type TranslationsParser<T extends Record<string, string>> = {
-  [K in keyof T]: ValueHandler<T[K]>;
+export type TranslationsParser<
+  T extends Record<string, string>,
+  TranslationsParserOptions extends {
+    formattedFunctions?: boolean;
+  } = {}
+> = {
+  [K in keyof T]: TranslationsParserOptions['formattedFunctions'] extends true
+    ? ValueHandler<T[K]>
+    : T[K];
 };

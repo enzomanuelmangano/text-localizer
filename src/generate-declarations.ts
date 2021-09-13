@@ -75,14 +75,18 @@ const resolveTranslation = async (translations: Record<string, any>) => {
 
   const typedTranslations = translations.map(
     ({ lang, data }) =>
-      `type ${lang} = import('text-localizer').TranslationsParser<${formatTranslationsWithDocs(
+      `type ${lang}<Options> = import('text-localizer').TranslationsParser<${formatTranslationsWithDocs(
         { language: lang, translations: data }
-      )}>;`
+      )}, Options>;`
   );
 
   const languages = strings.map(({ lang }) => lang);
 
-  const AppTranslations = `type AppTranslations = ${languages.join(' | ')}`;
+  const AppTranslations = `type AppTranslations<
+  Options extends { formattedFunctions?: boolean } = {
+    formattedFunctions: true;
+  }> = ${languages.map((language) => `${language}<Options>`).join(' | ')}`;
+
   const Languages = `type Languages = ${languages
     .map((lang) => `'${lang}'`)
     .join(' | ')}`;
