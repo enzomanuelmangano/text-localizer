@@ -13,14 +13,30 @@ const formatTranslationsWithDocs = ({
 }: {
   language: string;
   translations: Record<string, any>;
-}) => {
+}): string => {
   const translationKeys = Object.keys(translations);
 
-  return `{\n${translationKeys.reduce(
-    (stringifiedTranslations, key) =>
-      `${stringifiedTranslations}\n/**\n* @${language} ${translations[key]}\n*/\n${key}: '${translations[key]}';`,
-    ''
-  )}\n}`;
+  return `{\n${translationKeys.reduce((stringifiedTranslations, key) => {
+    const base = stringifiedTranslations;
+
+    const value = translations[key];
+
+    // prettier-ignore
+    const docs = typeof value === 'string' ? 
+    ['/**', 
+      `* @${language} ${value}`,
+      '*/'] : [];
+
+    const assignment =
+      typeof value === 'string'
+        ? `${key}: '${value}';`
+        : `${key}: ${formatTranslationsWithDocs({
+            language,
+            translations: value,
+          })};`;
+
+    return [base, ...docs, assignment].join('\n');
+  }, '')}\n}`;
 };
 
 const resolveTranslation = async (translations: Record<string, any>) => {

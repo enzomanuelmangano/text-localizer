@@ -2,7 +2,9 @@ type ExtractDefault<T> = T extends { default: T } ? { default: T } : T;
 
 type TranslationStrings<T> =
   | ExtractDefault<T>
-  | Record<string, string | Record<string, string>>;
+  | {
+      [key: string]: string | TranslationStrings<T>;
+    };
 
 type TranslationsParam<T> =
   | TranslationStrings<T>

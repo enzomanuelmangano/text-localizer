@@ -1,4 +1,8 @@
 {
   "favourites": "Controlla subito i tuoi preferiti",
-  "favouritesFun": "Controlla subito i tuoi preferiti {{ now }}"
+  "favouritesFun": "Controlla subito i tuoi preferiti {{ now }}",
+  "tab": {
+    "check": "check",
+    "test": "test"
+  }
 }

@@ -15,6 +15,6 @@ import { TextLocalizer } from '../../../lib';
 
   await localizer.setLanguage('us');
   const usTranslations = localizer.getTranslations();
-
-  console.log(usTranslations.favouritesFun({ now: 'bla' }));
+  console.log(usTranslations.favouritesFun({ now: 'test' }));
+  console.log(usTranslations.tab.check);
 })();
