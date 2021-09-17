@@ -9,6 +9,8 @@ import {
   WithHelpers,
 } from './types';
 
+import { StorageHandler } from '../storage';
+
 class TextLocalizer<L extends string, T extends Record<string, any>> {
   private _input: TextLocalizerParams<L, T>;
 
@@ -16,6 +18,8 @@ class TextLocalizer<L extends string, T extends Record<string, any>> {
   private _currentLanguage: L | undefined;
   private _fallbackLanguage: L | undefined;
   private _fallbackTranslations: T | undefined;
+
+  private storage?: StorageHandler;
 
   constructor(input: TextLocalizerParams<L, T>) {
     this._input = input;
@@ -42,7 +46,25 @@ class TextLocalizer<L extends string, T extends Record<string, any>> {
     } as WithHelpers<L, T>;
   }
 
-  public async setOptions({ fallback, language }: SetOptionsParams<L>) {
+  public async setOptions({
+    fallback,
+    language,
+    storage,
+    storageKey,
+    cacheDurationMs,
+  }: SetOptionsParams<L>) {
+    if (storage == null && (storageKey || cacheDurationMs)) {
+      throw Error(ErrorTypes.StorageOptions);
+    }
+
+    if (storage != null) {
+      this.storage = new StorageHandler({
+        storage,
+        cacheDurationMs,
+        key: storageKey,
+      });
+    }
+
     return await Promise.all([
       this.setLanguage(language),
       fallback ? this.setFallback(fallback) : null,
@@ -76,9 +98,15 @@ class TextLocalizer<L extends string, T extends Record<string, any>> {
   private async resolveTranslation(language: L): Promise<T> {
     const translationsInput = this._input[language] as TranslationsParam<T>;
 
+    if (typeof translationsInput !== 'function' && this.storage) {
+      const storedTranslations = await this.storage.get<T>(language);
+      if (storedTranslations) return storedTranslations;
+    }
+
     const translations = await parseTranslations(translationsInput);
     if (!translations) throw Error(ErrorTypes.TranslationsParsing);
 
+    await this.storage?.set(language, translations);
     return translations;
   }
 }

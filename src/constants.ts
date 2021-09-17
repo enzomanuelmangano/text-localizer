@@ -6,4 +6,8 @@ export enum ErrorTypes {
   UnsupportedFileExtensions = 'The generation of declarations requires the existence of translation files with the following extensions exclusively: js | ts | json',
   TranslationsParsing = 'An error occurred when parsing translations. Make sure you have specified the translations correctly in the TextLocalizer constructor.',
   TranslationsPath = 'Translations path must be specified.',
+  StorageOptions = 'Make sure to specify the storage property with cacheDurationMs || storageKey.',
 }
+
+export const DEFAULT_STORAGE_KEY = '@TEXT_LOCALIZER_STORAGE_KEY';
+export const DEFAULT_CACHE_DURATION_MS = 86400000; // 1 Day in MS

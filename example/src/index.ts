@@ -15,6 +15,7 @@ import { TextLocalizer } from '../../lib';
   const translations = localizer.translations;
 
   console.log(translations.tab.check);
+
   console.log(
     localizer.formatTranslation(translations.favouritesFun, { now: 'check' })
   );

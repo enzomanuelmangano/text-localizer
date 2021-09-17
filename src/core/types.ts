@@ -1,3 +1,5 @@
+import { IStorage } from '../storage/types';
+
 type ExtractDefault<T> = T extends { default: T } ? { default: T } : T;
 
 type TranslationStrings<T> =
@@ -21,6 +23,9 @@ type WithHelpers<L, T> = T & {
 type SetOptionsParams<L> = {
   fallback?: L;
   language: L;
+  storage?: IStorage;
+  storageKey?: string;
+  cacheDurationMs?: number;
 };
 
 export {
