@@ -20,24 +20,13 @@ type Flat<
 
 type ParseKeys<T extends string> = Flat<ParseBrackets<T>>;
 
-type Objectify<
+export type Objectify<
   T extends string,
   KeyType = string | number
 > = ParseKeys<T> extends undefined
   ? undefined
   : Record<Exclude<ParseKeys<T>, undefined>, KeyType>;
 
-type ValueHandler<T extends string> = Objectify<T> extends undefined
-  ? T
-  : (params: Required<Objectify<T>>) => string;
-
-export type TranslationsParser<
-  T extends Record<string, string>,
-  TranslationsParserOptions extends {
-    formattedFunctions?: boolean;
-  } = {}
-> = {
-  [K in keyof T]: TranslationsParserOptions['formattedFunctions'] extends true
-    ? ValueHandler<T[K]>
-    : T[K];
+export type TranslationsParser<T extends Record<string, string>> = {
+  [K in keyof T]: T[K];
 };
