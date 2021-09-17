@@ -18,9 +18,15 @@ type WithHelpers<L, T> = T & {
   currentLanguage: L;
 };
 
+type SetOptionsParams<L> = {
+  fallback?: L;
+  language: L;
+};
+
 export {
   TextLocalizerParams,
   WithHelpers,
   TranslationsParam,
   TranslationStrings,
+  SetOptionsParams,
 };

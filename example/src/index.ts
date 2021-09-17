@@ -1,7 +1,7 @@
 import { TextLocalizer } from '../../lib';
 
 (async () => {
-  const localizer = new TextLocalizer({
+  const localizer = new TextLocalizer<Languages, AppTranslations>({
     en: import('./l10n/en'),
     it: import('./l10n/it.json'),
     us: (await import('./l10n/us')).fetchUsTranslations,
@@ -10,11 +10,12 @@ import { TextLocalizer } from '../../lib';
   await localizer.setOptions({
     fallback: 'it',
     language: 'en',
-    formattedFunctionsEnabled: true,
   });
 
-  await localizer.setLanguage('us');
-  const usTranslations = localizer.getTranslations();
-  // console.log(usTranslations.favouritesFun({ now: 'test' }));
-  console.log(usTranslations.tab.check);
+  const translations = localizer.translations;
+
+  console.log(translations.tab.check);
+  console.log(
+    localizer.formatTranslation(translations.favouritesFun, { now: 'check' })
+  );
 })();

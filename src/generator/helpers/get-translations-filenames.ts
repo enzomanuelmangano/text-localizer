@@ -1,4 +1,5 @@
 import fs from 'fs';
+import { ErrorTypes } from '../../constants';
 
 type TranslationsFileName = {
   name: string;
@@ -27,8 +28,7 @@ export const getTranslationsFilenames = (
       name: string,
       ext: TranslationsFileName['ext']
     ];
-    // TODO: error definition
-    if (!name || !ext) throw Error();
+    if (!name || !ext) throw Error(ErrorTypes.UnsupportedFileExtensions);
     return { name, ext };
   });
 };
