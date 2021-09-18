@@ -8,9 +8,13 @@ type TranslationsFileName = {
 
 type GetTranslationsFilenamesResult = TranslationsFileName[];
 
-const acceptedExtensions: TranslationsFileName['ext'][] = ['ts', 'js', 'json'];
+export const acceptedExtensions: TranslationsFileName['ext'][] = [
+  'ts',
+  'js',
+  'json',
+];
 
-const isTranslationsFilename = (filename: string): boolean => {
+export const isTranslationsFilename = (filename: string): boolean => {
   return acceptedExtensions
     .map((ext) => filename.includes(ext) && filename.split('.')?.[1] === ext)
     .includes(true);

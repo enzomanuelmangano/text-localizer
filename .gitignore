@@ -4,4 +4,6 @@ lib
 .DS_Store
 .vscode
 
+coverage
+
 *.log
