@@ -1,4 +1,4 @@
-import fs from 'fs';
+import { readdirSync } from 'fs';
 import { ErrorTypes } from '../../constants';
 
 type TranslationsFileName = {
@@ -23,9 +23,9 @@ export const isTranslationsFilename = (filename: string): boolean => {
 export const getTranslationsFilenames = (
   translationsPath: string
 ): GetTranslationsFilenamesResult => {
-  const filenames = fs
-    .readdirSync(translationsPath)
-    .filter(isTranslationsFilename);
+  const filenames = readdirSync(translationsPath).filter(
+    isTranslationsFilename
+  );
 
   return filenames.map((filename) => {
     const [name, ext] = filename.split('.') as [

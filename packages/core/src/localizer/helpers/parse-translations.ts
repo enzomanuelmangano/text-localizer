@@ -1,4 +1,4 @@
-import { TranslationsParam, TranslationStrings } from '../types';
+import type { TranslationsParam, TranslationStrings } from '../types';
 
 export const parseTranslations = async <T>(
   param: TranslationsParam<T>

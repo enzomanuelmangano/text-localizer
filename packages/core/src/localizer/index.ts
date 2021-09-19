@@ -1,8 +1,8 @@
-import { Objectify } from '../ts-utils';
+import type { Objectify } from '../ts-utils';
 import { ErrorTypes } from '../constants';
 
 import { parseTranslations, regexByKey } from './helpers';
-import {
+import type {
   SetOptionsParams,
   TextLocalizerParams,
   TranslationsParam,

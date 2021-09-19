@@ -4,7 +4,7 @@
 // the node executable in order to enable
 // .ts file imports
 
-import fs from 'fs';
+import { writeFile } from 'fs';
 
 import {
   getGeneratedFileStructure,
@@ -32,13 +32,9 @@ const generateDeclarationsFile = async () => {
 
   const fileStructure = getGeneratedFileStructure(translations).join('\n\n');
 
-  fs.writeFile(
-    `${translationsPath}/translations.d.ts`,
-    fileStructure,
-    (err) => {
-      if (err) throw err;
-    }
-  );
+  writeFile(`${translationsPath}/translations.d.ts`, fileStructure, (err) => {
+    if (err) throw err;
+  });
 };
 
 // Execute Generation

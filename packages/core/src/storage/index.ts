@@ -1,5 +1,5 @@
 import { DEFAULT_CACHE_DURATION_MS, DEFAULT_STORAGE_KEY } from '../constants';
-import { IStorage } from '../storage/types';
+import type { IStorage } from '../storage/types';
 
 const CACHED_DURATION_TAIL_KEY = 'CACHED_DURATION';
 

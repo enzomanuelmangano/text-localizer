@@ -1,1 +1,1 @@
-console.log('@text-localizer/react');
+import { TextLocalizer } from '@text-localizer/core';

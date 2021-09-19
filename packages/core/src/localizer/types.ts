@@ -1,4 +1,4 @@
-import { IStorage } from '../storage/types';
+import type { IStorage } from '../storage/types';
 
 type ExtractDefault<T> = T extends { default: T } ? { default: T } : T;
 

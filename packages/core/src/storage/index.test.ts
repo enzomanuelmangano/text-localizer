@@ -1,6 +1,6 @@
 import { DEFAULT_CACHE_DURATION_MS } from '../constants';
 import { CACHED_DURATION_TAIL_KEY, StorageHandler } from './index';
-import { IStorage } from './types';
+import type { IStorage } from './types';
 
 const translationsData = { check: 'test' };
 

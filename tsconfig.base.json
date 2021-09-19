@@ -1,15 +1,21 @@
 {
   "compilerOptions": {
+    /* Projects */
+    "composite": true,
+
     /* Language and Environment */
     "target": "ES6" /* Set the JavaScript language version for emitted JavaScript and include compatible library declarations. */,
 
     /* Modules */
-    "composite": true,
     "module": "CommonJS" /* Specify what module code is generated. */,
     "resolveJsonModule": true /* Enable importing .json files */,
 
     /* Emit */
     "declaration": true /* Generate .d.ts files from TypeScript and JavaScript files in your project. */,
+    "importsNotUsedAsValues": "error",
+    "removeComments": true,
+
+    /* Interop Constraints */
     "esModuleInterop": true /* Emit additional JavaScript to ease support for importing CommonJS modules. This enables `allowSyntheticDefaultImports` for type compatibility. */,
     "forceConsistentCasingInFileNames": true /* Ensure that casing is correct in imports. */,
 
@@ -28,5 +34,6 @@
     "noPropertyAccessFromIndexSignature": true /* Enforces using indexed accessors for keys declared using an indexed type */,
     "allowUnreachableCode": false /* Disable error reporting for unreachable code. */,
     "skipLibCheck": true /* Skip type checking all .d.ts files. */
-  }
+  },
+  "exclude": ["node_modules", "**/*.test.ts"]
 }

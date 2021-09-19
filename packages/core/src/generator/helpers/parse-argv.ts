@@ -1,4 +1,4 @@
-import path from 'path';
+import { relative } from 'path';
 import { ErrorTypes } from '../../constants';
 
 export const parseProcessArgv = (argv: string[]) => {
@@ -8,10 +8,7 @@ export const parseProcessArgv = (argv: string[]) => {
     throw Error(ErrorTypes.TranslationsPath);
   }
 
-  const fromScriptToTranslationsPath = path.relative(
-    scriptPath,
-    translationsPath
-  );
+  const fromScriptToTranslationsPath = relative(scriptPath, translationsPath);
 
   return { scriptPath, translationsPath, fromScriptToTranslationsPath };
 };
