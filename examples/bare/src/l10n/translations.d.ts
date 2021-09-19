@@ -4,7 +4,7 @@
 
 /* eslint-disable */
 
-type en<Options> = import('text-localizer').TranslationsParser<
+type en<Options> = import('@text-localizer/core').TranslationsParser<
   {
     /**
      * @en Check out your favourites
@@ -28,7 +28,7 @@ type en<Options> = import('text-localizer').TranslationsParser<
   Options
 >;
 
-type it<Options> = import('text-localizer').TranslationsParser<
+type it<Options> = import('@text-localizer/core').TranslationsParser<
   {
     /**
      * @it Controlla subito i tuoi preferiti
@@ -52,7 +52,7 @@ type it<Options> = import('text-localizer').TranslationsParser<
   Options
 >;
 
-type us<Options> = import('text-localizer').TranslationsParser<
+type us<Options> = import('@text-localizer/core').TranslationsParser<
   {
     /**
      * @us Check out your favorites

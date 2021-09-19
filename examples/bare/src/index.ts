@@ -1,4 +1,4 @@
-import { TextLocalizer } from '../../lib';
+import { TextLocalizer } from '@text-localizer/core';
 
 (async () => {
   const localizer = new TextLocalizer<Languages, AppTranslations>({

@@ -10,19 +10,19 @@ describe('Test parse Translations', () => {
     const data = { check: 'test' };
     const translations = parseTranslations(data);
 
-    expect(translations).resolves.toBe(data);
+    return expect(translations).resolves.toBe(data);
   });
 
   test('as a nested object', () => {
     const translations = parseTranslations(nestedData);
-    expect(translations).resolves.toBe(nestedData);
+    return expect(translations).resolves.toBe(nestedData);
   });
 
   test('as an async function', async () => {
     const data = async () => nestedData;
 
     const translations = parseTranslations(data);
-    expect(translations).resolves.toStrictEqual(await data());
+    return expect(translations).resolves.toStrictEqual(await data());
   });
 
   test('as an imported file (with default param)', async () => {
@@ -32,6 +32,6 @@ describe('Test parse Translations', () => {
     };
 
     const translations = parseTranslations(data);
-    expect(translations).resolves.toStrictEqual(data['default']);
+    return expect(translations).resolves.toStrictEqual(data['default']);
   });
 });
