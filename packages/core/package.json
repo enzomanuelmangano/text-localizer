@@ -1,0 +1,36 @@
+{
+  "name": "@text-localizer/core",
+  "version": "0.0.1",
+  "main": "lib/index.js",
+  "types": "lib/index.d.ts",
+  "source": "src/index",
+  "files": [
+    "lib"
+  ],
+  "scripts": {
+    "start": "yarn tsc && node lib/index.js",
+    "generate-dts": "yarn tsc && node lib/generate-declarations.js",
+    "test": "jest src"
+  },
+  "bin": {
+    "generate-l10n": "lib/generator/index.js"
+  },
+  "keywords": [
+    "localization",
+    "l10n",
+    "i18n"
+  ],
+  "repository": "https://github.com/enzomanuelmangano/text-localizer",
+  "author": "Enzo Manuel Mangano <enzomanuelmangano@gmail.com> (https://github.com/enzomanuelmangano)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/enzomanuelmangano/text-localizer/issues"
+  },
+  "homepage": "https://github.com/enzomanuelmangano/text-localizer#readme",
+  "publishConfig": {
+    "registry": "https://registry.npmjs.org/"
+  },
+  "devDependencies": {
+    "@types/node": "^16.9.1"
+  }
+}

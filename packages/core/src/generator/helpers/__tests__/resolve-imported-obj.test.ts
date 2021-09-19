@@ -6,7 +6,7 @@ describe('resolve the imported translations', () => {
   test('check if it resolves the "object" translations', () => {
     const importedFile = { default: translations, ...translations };
 
-    expect(resolveImportedObject(importedFile)).resolves.toStrictEqual(
+    return expect(resolveImportedObject(importedFile)).resolves.toStrictEqual(
       translations
     );
   });
@@ -21,7 +21,7 @@ describe('resolve the imported translations', () => {
       fetchTranslationsFromServer,
     };
 
-    expect(resolveImportedObject(importedFile)).resolves.toStrictEqual(
+    return expect(resolveImportedObject(importedFile)).resolves.toStrictEqual(
       translations
     );
   });

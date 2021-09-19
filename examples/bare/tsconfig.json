@@ -1,0 +1,10 @@
+{
+  "extends": "../../tsconfig.base.json",
+  "compilerOptions": {
+    "rootDir": "./src",
+    "outDir": "./lib"
+  },
+  // Needed in order to support json imports on a composite project
+  // https://github.com/microsoft/TypeScript/issues/25636#issuecomment-455411380
+  "include": ["./src/**/*", "./src/**/*.json"]
+}
