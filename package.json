@@ -6,9 +6,9 @@
     "examples/*"
   ],
   "scripts": {
-    "typescript": "tsc --noEmit",
     "lint": "eslint \"**/*.{js,ts,tsx}\"",
-    "test": "lerna run test -- --coverage"
+    "test": "lerna run test -- --coverage",
+    "typescript": "lerna run typescript"
   },
   "commitlint": {
     "extends": [

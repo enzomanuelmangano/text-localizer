@@ -9,7 +9,8 @@
     "lib"
   ],
   "scripts": {
-    "start": "yarn tsc && node lib/index.js"
+    "start": "yarn tsc && node lib/index.js",
+    "typescript": "yarn tsc --noEmit"
   },
   "keywords": [
     "localization",

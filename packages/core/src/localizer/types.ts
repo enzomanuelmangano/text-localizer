@@ -2,11 +2,7 @@ import { IStorage } from '../storage/types';
 
 type ExtractDefault<T> = T extends { default: T } ? { default: T } : T;
 
-type TranslationStrings<T> =
-  | ExtractDefault<T>
-  | {
-      [key: string]: string | TranslationStrings<T>;
-    };
+type TranslationStrings<T> = ExtractDefault<T>;
 
 type TranslationsParam<T> =
   | TranslationStrings<T>

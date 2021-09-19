@@ -9,6 +9,7 @@
   ],
   "scripts": {
     "start": "yarn tsc && node lib/index.js",
+    "typescript": "yarn tsc --noEmit",
     "generate-dts": "yarn tsc && node lib/generate-declarations.js",
     "test": "jest src"
   },
