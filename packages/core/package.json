@@ -8,9 +8,11 @@
     "lib"
   ],
   "scripts": {
-    "start": "yarn tsc && node lib/index.js",
-    "typescript": "yarn tsc --noEmit",
-    "generate-dts": "yarn tsc && node lib/generate-declarations.js",
+    "lint": "eslint \"**/*.{js,ts,tsx}\"",
+    "compile": "yarn tsc",
+    "start": "yarn compile && node lib/index.js",
+    "typescript": "yarn compile --noEmit",
+    "generate-dts": "yarn compile && node lib/generate-declarations.js",
     "test": "jest src"
   },
   "bin": {
@@ -32,6 +34,7 @@
     "registry": "https://registry.npmjs.org/"
   },
   "devDependencies": {
-    "@types/node": "^16.9.1"
+    "@types/node": "^16.9.1",
+    "eslint-config-google": "^0.14.0"
   }
 }

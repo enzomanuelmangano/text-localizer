@@ -5,13 +5,13 @@ npx --no-install commitlint --edit
 
 echo 'Checking Styles and Types before committing'
 
-npm run lint || 
+yarn lint || 
 (
     echo 'ESLint check failed.';
     false;
 )
 
-npm run typescript || 
+yarn typescript || 
 (
     echo 'Type check failed.';
     false;

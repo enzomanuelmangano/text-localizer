@@ -9,8 +9,10 @@
     "lib"
   ],
   "scripts": {
-    "start": "yarn tsc && node lib/index.js",
-    "typescript": "yarn tsc --noEmit"
+    "lint": "eslint \"**/*.{js,ts,tsx}\"",
+    "compile": "yarn tsc",
+    "start": "yarn compile && node lib/index.js",
+    "typescript": "yarn compile --noEmit"
   },
   "keywords": [
     "localization",
@@ -28,6 +30,12 @@
     "@text-localizer/core": "^0.0.1"
   },
   "devDependencies": {
-    "typescript": "^4.4.3"
+    "@types/react": "^17.0.21",
+    "react": "^17.0.2",
+    "typescript": "^4.4.3",
+    "eslint-plugin-react": "^7.25.3"
+  },
+  "peerDependencies": {
+    "react": "*"
   }
 }
