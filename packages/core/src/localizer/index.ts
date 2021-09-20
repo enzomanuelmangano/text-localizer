@@ -6,7 +6,6 @@ import type {
   SetOptionsParams,
   TextLocalizerParams,
   TranslationsParam,
-  WithHelpers,
 } from './types';
 
 import { StorageHandler } from '../storage';
@@ -35,15 +34,14 @@ class TextLocalizer<L extends string, T extends Record<string, any>> {
     return language;
   }
 
-  public get translations(): WithHelpers<L, T> {
+  public get translations(): T {
     if (!this._translations && !this._fallbackTranslations)
       throw Error(ErrorTypes.NoTranslationWasFound);
 
     return {
       ...this._fallbackTranslations,
       ...this._translations,
-      currentLanguage: this.currentLanguage,
-    } as WithHelpers<L, T>;
+    } as T;
   }
 
   public async setOptions({
@@ -89,7 +87,7 @@ class TextLocalizer<L extends string, T extends Record<string, any>> {
     this._fallbackTranslations = await this.resolveTranslation(language);
   }
 
-  private async setLanguage(language: L): Promise<WithHelpers<L, T>> {
+  private async setLanguage(language: L): Promise<T> {
     this._currentLanguage = language;
     this._translations = await this.resolveTranslation(language);
     return this.translations;

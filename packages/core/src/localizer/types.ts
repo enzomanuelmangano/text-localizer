@@ -12,10 +12,6 @@ type TranslationsParam<T> =
 
 type TextLocalizerParams<L extends string, T> = Record<L, TranslationsParam<T>>;
 
-type WithHelpers<L, T> = T & {
-  currentLanguage: L;
-};
-
 type SetOptionsParams<L> = {
   fallback?: L;
   language: L;
@@ -26,7 +22,6 @@ type SetOptionsParams<L> = {
 
 export {
   TextLocalizerParams,
-  WithHelpers,
   TranslationsParam,
   TranslationStrings,
   SetOptionsParams,
