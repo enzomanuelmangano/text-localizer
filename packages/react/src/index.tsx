@@ -3,6 +3,7 @@ import React, {
   useCallback,
   useContext,
   useEffect,
+  useMemo,
   useState,
 } from 'react';
 
@@ -16,6 +17,7 @@ import { equals } from './helpers/equals';
 
 interface TranslationsProviderProps<L> extends OptionsType<L> {
   children?: React.ReactNode;
+  forceRefetch?: boolean;
 }
 
 function createTranslationsProvider<L extends string, T>(
@@ -25,12 +27,13 @@ function createTranslationsProvider<L extends string, T>(
     isLoading: boolean;
     error?: Error | null;
     languages: L[];
+    currentLanguage?: L;
   };
 
   type TranslationsContextType = {
     translations: TextLocalizer<L, T>['translations'] | {};
   } & {
-    state: Pick<TranslationsState, 'error' | 'languages'>;
+    state: Omit<TranslationsState, 'isLoading'>;
   };
 
   const textLocalizer = new TextLocalizer(textLocalizerParams);
@@ -50,12 +53,18 @@ function createTranslationsProvider<L extends string, T>(
 
   const TranslationsProvider: React.FC<TranslationsProviderProps<L>> = ({
     children,
+    forceRefetch = false,
     ...options
   }) => {
     const [translationsData, setTranslationsData] =
       useState(initialContextValue);
 
     const previousOptions = usePrevious(options);
+
+    const cacheDurationMs = useMemo(
+      () => (forceRefetch ? 0 : options.cacheDurationMs),
+      [forceRefetch, options.cacheDurationMs]
+    );
 
     const setTranslationsOptions = useCallback(
       async (options: OptionsType<L>): Promise<void> => {
@@ -64,17 +73,38 @@ function createTranslationsProvider<L extends string, T>(
         }
         if (previousOptions) {
           setTranslationsData((data) => ({
-            ...data,
+            state: {
+              ...data.state,
+              currentLanguage: options.language ?? options.fallback,
+            },
             translations: {},
           }));
         }
-        await textLocalizer.setOptions(options);
+        try {
+          await textLocalizer.setOptions({
+            ...options,
+            cacheDurationMs,
+          });
+        } catch (e) {
+          if (!options.fallback) {
+            console.error(e);
+            return;
+          }
+          console.warn(e);
+          await textLocalizer.setOptions({
+            ...options,
+            language: options.fallback,
+          });
+        }
         setTranslationsData((data) => ({
-          ...data,
+          state: {
+            ...data.state,
+            currentLanguage: options.language ?? options.fallback,
+          },
           translations: textLocalizer.translations,
         }));
       },
-      [previousOptions]
+      [cacheDurationMs, previousOptions]
     );
 
     useEffect(() => {
