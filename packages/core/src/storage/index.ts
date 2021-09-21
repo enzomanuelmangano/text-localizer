@@ -31,6 +31,7 @@ class StorageHandler {
 
     const isExpired =
       time == null ? false : Date.now() - +time > this._cacheDuration;
+
     if (isExpired) return null;
 
     const storedData = await this._storage.getItem(this.getKey(indexedKey));

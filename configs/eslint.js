@@ -4,14 +4,12 @@ module.exports = {
     es2021: true,
     node: true,
   },
-  extends: ['google', 'prettier'],
+  extends: ['prettier'],
   parser: '@typescript-eslint/parser',
   parserOptions: {
     ecmaVersion: 12,
     sourceType: 'module',
   },
   plugins: ['@typescript-eslint'],
-  rules: {
-    'require-jsdoc': 'off',
-  },
+  ignorePatterns: ['lib/', 'node_modules/'],
 };

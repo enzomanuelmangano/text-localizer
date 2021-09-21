@@ -2,7 +2,12 @@ import type { IStorage } from '../storage/types';
 
 type ExtractDefault<T> = T extends { default: T } ? { default: T } : T;
 
-type TranslationStrings<T> = ExtractDefault<T>;
+type TranslationStrings<T> =
+  | ExtractDefault<T>
+  | Promise<{
+      [key: string]: any;
+    }>
+  | T;
 
 type TranslationsParam<T> =
   | TranslationStrings<T>
@@ -12,11 +17,7 @@ type TranslationsParam<T> =
 
 type TextLocalizerParams<L extends string, T> = Record<L, TranslationsParam<T>>;
 
-type WithHelpers<L, T> = T & {
-  currentLanguage: L;
-};
-
-type SetOptionsParams<L> = {
+type OptionsType<L> = {
   fallback?: L;
   language: L;
   storage?: IStorage;
@@ -26,8 +27,7 @@ type SetOptionsParams<L> = {
 
 export {
   TextLocalizerParams,
-  WithHelpers,
   TranslationsParam,
   TranslationStrings,
-  SetOptionsParams,
+  OptionsType,
 };

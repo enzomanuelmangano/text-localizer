@@ -3,10 +3,9 @@ import { ErrorTypes } from '../constants';
 
 import { parseTranslations, regexByKey } from './helpers';
 import type {
-  SetOptionsParams,
+  OptionsType,
   TextLocalizerParams,
   TranslationsParam,
-  WithHelpers,
 } from './types';
 
 import { StorageHandler } from '../storage';
@@ -35,15 +34,14 @@ class TextLocalizer<L extends string, T extends Record<string, any>> {
     return language;
   }
 
-  public get translations(): WithHelpers<L, T> {
+  public get translations(): T {
     if (!this._translations && !this._fallbackTranslations)
       throw Error(ErrorTypes.NoTranslationWasFound);
 
     return {
       ...this._fallbackTranslations,
       ...this._translations,
-      currentLanguage: this.currentLanguage,
-    } as WithHelpers<L, T>;
+    } as T;
   }
 
   public async setOptions({
@@ -52,7 +50,7 @@ class TextLocalizer<L extends string, T extends Record<string, any>> {
     storage,
     storageKey,
     cacheDurationMs,
-  }: SetOptionsParams<L>) {
+  }: OptionsType<L>) {
     if (storage == null && (storageKey || cacheDurationMs)) {
       throw Error(ErrorTypes.StorageOptions);
     }
@@ -89,16 +87,23 @@ class TextLocalizer<L extends string, T extends Record<string, any>> {
     this._fallbackTranslations = await this.resolveTranslation(language);
   }
 
-  private async setLanguage(language: L): Promise<WithHelpers<L, T>> {
+  public async setLanguage(language: L, forceRefetch?: false): Promise<T> {
     this._currentLanguage = language;
-    this._translations = await this.resolveTranslation(language);
+    this._translations = await this.resolveTranslation(language, forceRefetch);
     return this.translations;
   }
 
-  private async resolveTranslation(language: L): Promise<T> {
+  private async resolveTranslation(
+    language: L,
+    forceRefetch?: false
+  ): Promise<T> {
     const translationsInput = this._input[language] as TranslationsParam<T>;
 
-    if (typeof translationsInput !== 'function' && this.storage) {
+    if (
+      typeof translationsInput === 'function' &&
+      this.storage &&
+      !forceRefetch
+    ) {
       const storedTranslations = await this.storage.get<T>(language);
       if (storedTranslations) return storedTranslations;
     }
@@ -111,4 +116,4 @@ class TextLocalizer<L extends string, T extends Record<string, any>> {
   }
 }
 
-export { TextLocalizer, TextLocalizerParams };
+export { TextLocalizer, TextLocalizerParams, OptionsType };

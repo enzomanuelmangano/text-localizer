@@ -1,15 +1,15 @@
 import { TextLocalizer } from '@text-localizer/core';
+import { fetchUsTranslations } from './l10n/us';
 
 (async () => {
-  const localizer = new TextLocalizer<Languages, AppTranslations>({
-    en: import('./l10n/en'),
+  const localizer = new TextLocalizer({
     it: import('./l10n/it.json'),
-    us: (await import('./l10n/us')).fetchUsTranslations,
+    en: import('./l10n/en'),
+    us: fetchUsTranslations,
   });
 
   await localizer.setOptions({
-    fallback: 'it',
-    language: 'en',
+    language: 'us',
   });
 
   const translations = localizer.translations;
