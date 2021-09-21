@@ -6,12 +6,15 @@ import React, {
   useState,
 } from 'react';
 
-import { TextLocalizer, TextLocalizerParams } from '@text-localizer/core';
-import type { SetOptionsParams } from '@text-localizer/core/src/localizer/types';
+import {
+  TextLocalizer,
+  TextLocalizerParams,
+  OptionsType,
+} from '@text-localizer/core';
 import { usePrevious } from './hooks/use-previous';
 import { equals } from './helpers/equals';
 
-interface TranslationsProviderProps<L> extends SetOptionsParams<L> {
+interface TranslationsProviderProps<L> extends OptionsType<L> {
   children?: React.ReactNode;
 }
 
@@ -55,7 +58,7 @@ function createTranslationsProvider<L extends string, T>(
     const previousOptions = usePrevious(options);
 
     const setTranslationsOptions = useCallback(
-      async (options: SetOptionsParams<L>): Promise<void> => {
+      async (options: OptionsType<L>): Promise<void> => {
         if (previousOptions && options && equals(previousOptions, options)) {
           return;
         }
@@ -86,10 +89,7 @@ function createTranslationsProvider<L extends string, T>(
   };
 
   const useTranslations = () => {
-    return useContext(TranslationsContext).translations as TextLocalizer<
-      L,
-      T
-    >['translations'];
+    return useContext(TranslationsContext).translations as T;
   };
 
   const useTranslationsState = (): TranslationsState => {
