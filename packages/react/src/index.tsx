@@ -138,4 +138,8 @@ function createTranslationsProvider<L extends string, T>(
   };
 }
 
-export { createTranslationsProvider };
+export {
+  createTranslationsProvider,
+  TextLocalizerParams,
+  TranslationsProviderProps,
+};
