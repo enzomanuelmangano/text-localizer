@@ -5,7 +5,9 @@ import App from './App';
 import { TranslationsProvider } from './l10n';
 
 const Providers: React.FC = ({ children }) => (
-  <TranslationsProvider language="it">{children}</TranslationsProvider>
+  <TranslationsProvider language="us" storage={localStorage}>
+    {children}
+  </TranslationsProvider>
 );
 
 ReactDOM.render(

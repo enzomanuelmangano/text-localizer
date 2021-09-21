@@ -2,10 +2,11 @@ import './App.css';
 import { useTranslations, useTranslationsState } from './l10n';
 
 function App() {
-  const { check } = useTranslations();
+  const { favourites } = useTranslations();
   const { isLoading } = useTranslationsState();
 
-  console.log({ isLoading, check });
+  if (isLoading) return null;
+
   return (
     <div className="App">
       <header className="App-header">
@@ -18,7 +19,7 @@ function App() {
           target="_blank"
           rel="noopener noreferrer"
         >
-          {check}
+          {favourites}
         </a>
       </header>
     </div>
