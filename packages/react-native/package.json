@@ -1,0 +1,41 @@
+{
+  "name": "@text-localizer/react-native",
+  "version": "0.0.1",
+  "license": "MIT",
+  "main": "lib/index.js",
+  "types": "lib/index.d.ts",
+  "source": "src/index",
+  "files": [
+    "lib"
+  ],
+  "scripts": {
+    "lint": "eslint \"**/*.{js,ts,tsx}\"",
+    "compile": "yarn tsc",
+    "start": "yarn compile && node lib/index.js",
+    "typescript": "yarn compile --noEmit"
+  },
+  "keywords": [
+    "localization",
+    "react",
+    "react-native",
+    "l10n",
+    "i18n"
+  ],
+  "repository": "https://github.com/enzomanuelmangano/text-localizer",
+  "author": "Enzo Manuel Mangano <enzomanuelmangano@gmail.com> (https://github.com/enzomanuelmangano)",
+  "bugs": {
+    "url": "https://github.com/enzomanuelmangano/text-localizer/issues"
+  },
+  "homepage": "https://github.com/enzomanuelmangano/text-localizer#readme",
+  "dependencies": {
+    "@text-localizer/react": "^0.0.1"
+  },
+  "devDependencies": {
+    "@types/react": "^17.0.21",
+    "react": "^17.0.2",
+    "typescript": "^4.4.3"
+  },
+  "peerDependencies": {
+    "react": "*"
+  }
+}
