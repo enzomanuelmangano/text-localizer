@@ -1,5 +1,5 @@
 {
-  "name": "text-localizer",
+  "name": "text-localizer-root",
   "private": true,
   "workspaces": [
     "packages/*",
