@@ -10,7 +10,7 @@
 
 import React from 'react';
 import { StyleSheet, Text, View } from 'react-native';
-import { multiply } from 'react-native-text-localizer';
+import { getCurrentLanguage } from 'react-native-text-localizer';
 import {
   TranslationsProvider,
   useTranslations,
@@ -18,8 +18,8 @@ import {
 } from './l10n';
 
 const App = () => {
-  multiply(1, 30).then((result) => {
-    console.log({ result });
+  getCurrentLanguage().then((value) => {
+    console.log({ value });
   });
 
   return (

@@ -4,6 +4,8 @@ import com.facebook.react.bridge.ReactApplicationContext
 import com.facebook.react.bridge.ReactContextBaseJavaModule
 import com.facebook.react.bridge.ReactMethod
 import com.facebook.react.bridge.Promise
+import java.util.Locale
+
 
 class TextLocalizerModule(reactContext: ReactApplicationContext) : ReactContextBaseJavaModule(reactContext) {
 
@@ -11,14 +13,9 @@ class TextLocalizerModule(reactContext: ReactApplicationContext) : ReactContextB
         return "TextLocalizer"
     }
 
-    // Example method
-    // See https://reactnative.dev/docs/native-modules-android
     @ReactMethod
-    fun multiply(a: Int, b: Int, promise: Promise) {
-    
-      promise.resolve(a * b)
-    
+    fun getCurrentLanguage(promise: Promise) {
+      promise.resolve(Locale.getDefault().language)
     }
 
-    
 }
