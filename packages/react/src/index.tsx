@@ -36,7 +36,7 @@ function createTranslationsProvider<L extends string, T>(
     state: Omit<TranslationsState, 'isLoading'>;
   };
 
-  const textLocalizer = new TextLocalizer(textLocalizerParams);
+  const textLocalizer = new TextLocalizer<L, T>(textLocalizerParams);
 
   const initialTranslationsState = {
     error: null,
@@ -119,7 +119,14 @@ function createTranslationsProvider<L extends string, T>(
   };
 
   const useTranslations = () => {
-    return useContext(TranslationsContext).translations as T;
+    const operations = useMemo(
+      () => ({
+        formatTranslation: textLocalizer.formatTranslation,
+      }),
+      []
+    );
+    const translations = useContext(TranslationsContext).translations as T;
+    return { ...operations, ...translations };
   };
 
   const useTranslationsState = (): TranslationsState => {
