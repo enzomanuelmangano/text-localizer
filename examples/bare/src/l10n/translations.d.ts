@@ -4,82 +4,69 @@
 
 /* eslint-disable */
 
-type en<Options> = import('text-localizer').TranslationsParser<
-  {
+type en = import('text-localizer').TranslationsParser<{
+  /**
+   * @en Check out your favourites
+   */
+  favourites: 'Check out your favourites';
+  /**
+   * @en Check out your favourites! {{ now }}
+   */
+  favouritesFun: 'Check out your favourites! {{ now }}';
+  tab: {
     /**
-     * @en Check out your favourites
+     * @en check
      */
-    favourites: 'Check out your favourites';
+    check: 'check';
     /**
-     * @en Check out your favourites! {{ now }}
+     * @en test
      */
-    favouritesFun: 'Check out your favourites! {{ now }}';
-    tab: {
-      /**
-       * @en check
-       */
-      check: 'check';
-      /**
-       * @en test
-       */
-      test: 'test';
-    };
-  },
-  Options
->;
+    test: 'test';
+  };
+}>;
 
-type it<Options> = import('text-localizer').TranslationsParser<
-  {
+type it = import('text-localizer').TranslationsParser<{
+  /**
+   * @it Controlla subito i tuoi preferiti
+   */
+  favourites: 'Controlla subito i tuoi preferiti';
+  /**
+   * @it Controlla subito i tuoi preferiti {{ now }}
+   */
+  favouritesFun: 'Controlla subito i tuoi preferiti {{ now }}';
+  tab: {
     /**
-     * @it Controlla subito i tuoi preferiti
+     * @it check
      */
-    favourites: 'Controlla subito i tuoi preferiti';
+    check: 'check';
     /**
-     * @it Controlla subito i tuoi preferiti {{ now }}
+     * @it test
      */
-    favouritesFun: 'Controlla subito i tuoi preferiti {{ now }}';
-    tab: {
-      /**
-       * @it check
-       */
-      check: 'check';
-      /**
-       * @it test
-       */
-      test: 'test';
-    };
-  },
-  Options
->;
+    test: 'test';
+  };
+}>;
 
-type us<Options> = import('text-localizer').TranslationsParser<
-  {
+type us = import('text-localizer').TranslationsParser<{
+  /**
+   * @us Check out your favorites
+   */
+  favourites: 'Check out your favorites';
+  /**
+   * @us Check out your favorites! {{ now }}
+   */
+  favouritesFun: 'Check out your favorites! {{ now }}';
+  tab: {
     /**
-     * @us Check out your favorites
+     * @us check
      */
-    favourites: 'Check out your favorites';
+    check: 'check';
     /**
-     * @us Check out your favorites! {{ now }}
+     * @us test
      */
-    favouritesFun: 'Check out your favorites! {{ now }}';
-    tab: {
-      /**
-       * @us check
-       */
-      check: 'check';
-      /**
-       * @us test
-       */
-      test: 'test';
-    };
-  },
-  Options
->;
+    test: 'test';
+  };
+}>;
 
-type AppTranslations<
-  Options extends { formattedFunctions?: boolean } = {
-    formattedFunctions: true;
-  }
-> = en<Options> | it<Options> | us<Options>;
+type AppTranslations = en | it | us;
 
 type Languages = 'en' | 'it' | 'us';
