@@ -5,8 +5,20 @@
   "main": "lib/index.js",
   "types": "lib/index.d.ts",
   "source": "src/index",
+  "description": "TODO:",
   "files": [
-    "lib"
+    "lib",
+    "src",
+    "android",
+    "ios",
+    "cpp",
+    "react-native-text-localizer.podspec",
+    "!lib/typescript/example",
+    "!android/build",
+    "!ios/build",
+    "!**/__tests__",
+    "!**/__fixtures__",
+    "!**/__mocks__"
   ],
   "scripts": {
     "lint": "eslint \"**/*.{js,ts,tsx}\"",
