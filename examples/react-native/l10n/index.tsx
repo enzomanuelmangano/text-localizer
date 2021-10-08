@@ -1,4 +1,4 @@
-import { createTranslationsProvider } from '@text-localizer/react-native';
+import { createTranslationsProvider } from 'react-native-text-localizer';
 import { fetchUsTranslations } from './us';
 
 const { useTranslations, useTranslationsState, TranslationsProvider } =
