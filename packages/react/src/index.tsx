@@ -11,7 +11,7 @@ import {
   TextLocalizer,
   TextLocalizerParams,
   OptionsType,
-} from '@text-localizer/core';
+} from 'text-localizer';
 import { usePrevious } from './hooks/use-previous';
 import { equals } from './helpers/equals';
 

@@ -1,1 +1,1 @@
-export * from '@text-localizer/react';
+export * from 'react-text-localizer';

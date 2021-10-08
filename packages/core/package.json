@@ -1,5 +1,5 @@
 {
-  "name": "@text-localizer/core",
+  "name": "text-localizer",
   "version": "0.0.1",
   "main": "lib/index.js",
   "types": "lib/index.d.ts",

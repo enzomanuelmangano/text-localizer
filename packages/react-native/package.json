@@ -1,5 +1,5 @@
 {
-  "name": "@text-localizer/react-native",
+  "name": "react-native-text-localizer",
   "version": "0.0.1",
   "license": "MIT",
   "main": "lib/index.js",
@@ -28,7 +28,7 @@
   },
   "homepage": "https://github.com/enzomanuelmangano/text-localizer#readme",
   "dependencies": {
-    "@text-localizer/react": "^0.0.1"
+    "react-text-localizer": "^0.0.1"
   },
   "devDependencies": {
     "@types/react": "^17.0.21",

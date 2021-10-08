@@ -14,6 +14,6 @@
   },
   "dependencies": {
     "axios": "^0.21.4",
-    "@text-localizer/core": "^0.0.1"
+    "text-localizer": "^0.0.1"
   }
 }

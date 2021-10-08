@@ -10,7 +10,7 @@
     "react-dom": "^17.0.2",
     "react-scripts": "4.0.3",
     "typescript": "^4.4.3",
-    "@text-localizer/react": "^0.0.1"
+    "react-text-localizer": "^0.0.1"
   },
   "scripts": {
     "start": "react-scripts start",
