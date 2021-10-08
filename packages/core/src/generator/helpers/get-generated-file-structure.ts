@@ -12,18 +12,16 @@ export const getGeneratedFileStructure = (
   }[]
 ) => {
   const languages = translations.map(({ lang }) => lang);
+  const packageName = 'text-localizer';
 
   const TypedTranslations = translations.map(
     ({ lang, data }) =>
-      `type ${lang}<Options> = import('text-localizer').TranslationsParser<${formatTranslationsWithDocs(
+      `type ${lang} = import("${packageName}").TranslationsParser<${formatTranslationsWithDocs(
         { language: lang, translations: data }
-      )}, Options>;`
+      )}>;`
   );
 
-  const AppTranslations = `type AppTranslations<
-  Options extends { formattedFunctions?: boolean } = {
-    formattedFunctions: true;
-  }> = ${languages.map((language) => `${language}<Options>`).join(' | ')}`;
+  const AppTranslations = `type AppTranslations = ${languages.join(' | ')}`;
 
   const Languages = `type Languages = ${languages
     .map((lang) => `'${lang}'`)
