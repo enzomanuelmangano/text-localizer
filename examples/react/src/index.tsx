@@ -2,10 +2,15 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
-import { TranslationsProvider } from './l10n';
+import { TranslationsProvider } from 'react-text-localizer';
+import { translationsContext } from './l10n';
 
 const Providers: React.FC = ({ children }) => (
-  <TranslationsProvider language="us" storage={localStorage}>
+  <TranslationsProvider
+    context={translationsContext}
+    language="us"
+    storage={localStorage}
+  >
     {children}
   </TranslationsProvider>
 );

@@ -1,9 +1,10 @@
+import { useTranslations, useTranslationsState } from 'react-text-localizer';
 import './App.css';
-import { useTranslations, useTranslationsState } from './l10n';
+import { translationsContext } from './l10n';
 
 function App() {
-  const { favourites } = useTranslations();
-  const { isLoading } = useTranslationsState();
+  const { favourites } = useTranslations(translationsContext);
+  const { isLoading } = useTranslationsState(translationsContext);
 
   if (isLoading) return null;
 
