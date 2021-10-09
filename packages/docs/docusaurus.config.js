@@ -2,6 +2,7 @@
 // Note: type annotations allow type checking and IDEs autocompletion
 
 const theme = require('prism-react-renderer/themes/palenight');
+const darkTheme = require('prism-react-renderer/themes/dracula');
 
 /** @type {import('@docusaurus/types').Config} */
 const config = {
@@ -102,6 +103,7 @@ const config = {
       },
       prism: {
         theme: theme,
+        darkTheme: darkTheme,
       },
     }),
 };
