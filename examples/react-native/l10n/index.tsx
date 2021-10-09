@@ -1,11 +1,13 @@
-import { createTranslationsProvider } from 'react-native-text-localizer';
+import { createTranslationsContext } from 'react-native-text-localizer';
+import { TextLocalizer } from 'text-localizer';
 import { fetchUsTranslations } from './us';
 
-const { useTranslations, useTranslationsState, TranslationsProvider } =
-  createTranslationsProvider({
+const translationsContext = createTranslationsContext(
+  new TextLocalizer({
     it: import('./it.json'),
     us: fetchUsTranslations,
     en: import('./en'),
-  });
+  })
+);
 
-export { useTranslations, useTranslationsState, TranslationsProvider };
+export { translationsContext };
