@@ -10,12 +10,13 @@
 
 import React from 'react';
 import { StyleSheet, Text, View } from 'react-native';
-import { getCurrentLanguage } from 'react-native-text-localizer';
 import {
+  getCurrentLanguage,
   TranslationsProvider,
   useTranslations,
   useTranslationsState,
-} from './l10n';
+} from 'react-native-text-localizer';
+import { translationsContext } from './l10n';
 
 const App = () => {
   getCurrentLanguage().then((value) => {
@@ -23,15 +24,15 @@ const App = () => {
   });
 
   return (
-    <TranslationsProvider language={'it'}>
+    <TranslationsProvider context={translationsContext} language={'it'}>
       <MainScreen />
     </TranslationsProvider>
   );
 };
 
 const MainScreen: React.FC = () => {
-  const { favourites } = useTranslations();
-  const { isLoading } = useTranslationsState();
+  const { favourites } = useTranslations(translationsContext);
+  const { isLoading } = useTranslationsState(translationsContext);
 
   if (isLoading) {
     return null;
