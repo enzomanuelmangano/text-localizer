@@ -5,7 +5,7 @@
   "main": "lib/index.js",
   "types": "lib/index.d.ts",
   "source": "src/index",
-  "description": "TODO:",
+  "description": "A lightweight, fast and flexible way to handle localized strings in React Native",
   "files": [
     "lib",
     "src",
