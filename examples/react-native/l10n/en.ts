@@ -1,11 +1,6 @@
-import it from './it.json';
+import us from './us.json';
 
 export default {
-  ...it,
-  favourites: 'Check out your favourites',
-  favouritesFun: 'Check out your favourites! {{ now }}',
-  tab: {
-    check: 'check',
-    test: 'test',
-  },
+  ...us,
+  question: 'Which is your favourite cat?',
 };

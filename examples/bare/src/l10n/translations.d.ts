@@ -6,65 +6,47 @@
 
 type en = import('text-localizer').TranslationsParser<{
   /**
-   * @en Check out your favourites
+   * @en Welcome on the Text Localizer Docs
    */
-  favourites: 'Check out your favourites';
+  welcome: 'Welcome on the Text Localizer Docs';
   /**
-   * @en Check out your favourites! {{ now }}
+   * @en Do you need some help about {{ topic }}?
    */
-  favouritesFun: 'Check out your favourites! {{ now }}';
-  tab: {
-    /**
-     * @en check
-     */
-    check: 'check';
-    /**
-     * @en test
-     */
-    test: 'test';
-  };
+  help: 'Do you need some help about {{ topic }}?';
+  /**
+   * @en Which is your favourite cat?
+   */
+  question: 'Which is your favourite cat?';
 }>;
 
 type it = import('text-localizer').TranslationsParser<{
   /**
-   * @it Controlla subito i tuoi preferiti
+   * @it Benvenuto sulla documentazione di Text Localizer
    */
-  favourites: 'Controlla subito i tuoi preferiti';
+  welcome: 'Benvenuto sulla documentazione di Text Localizer';
   /**
-   * @it Controlla subito i tuoi preferiti {{ now }}
+   * @it Hai bisogno di aiuto riguardo {{ topic }}?
    */
-  favouritesFun: 'Controlla subito i tuoi preferiti {{ now }}';
-  tab: {
-    /**
-     * @it check
-     */
-    check: 'check';
-    /**
-     * @it test
-     */
-    test: 'test';
-  };
+  help: 'Hai bisogno di aiuto riguardo {{ topic }}?';
+  /**
+   * @it Qual è il tuo gatto preferito?
+   */
+  question: 'Qual è il tuo gatto preferito?';
 }>;
 
 type us = import('text-localizer').TranslationsParser<{
   /**
-   * @us Check out your favorites
+   * @us Welcome on the Text Localizer Docs
    */
-  favourites: 'Check out your favorites';
+  welcome: 'Welcome on the Text Localizer Docs';
   /**
-   * @us Check out your favorites! {{ now }}
+   * @us Do you need some help about {{ topic }}?
    */
-  favouritesFun: 'Check out your favorites! {{ now }}';
-  tab: {
-    /**
-     * @us check
-     */
-    check: 'check';
-    /**
-     * @us test
-     */
-    test: 'test';
-  };
+  help: 'Do you need some help about {{ topic }}?';
+  /**
+   * @us Which is your favorite cat?
+   */
+  question: 'Which is your favorite cat?';
 }>;
 
 type AppTranslations = en | it | us;

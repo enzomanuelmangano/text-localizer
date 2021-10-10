@@ -1,12 +1,12 @@
 import { TextLocalizer } from 'text-localizer';
 import { createTranslationsContext } from 'react-text-localizer';
-import { fetchUsTranslations } from './us';
+import { fetchItTranslations } from './it';
 
 const translationsContext = createTranslationsContext(
-  new TextLocalizer<Languages, AppTranslations>({
-    it: import('./it.json'),
-    us: fetchUsTranslations,
+  new TextLocalizer({
+    it: fetchItTranslations,
     en: import('./en'),
+    us: import('./us.json'),
   })
 );
 

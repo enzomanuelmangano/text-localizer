@@ -1,11 +1,11 @@
 import { TextLocalizer } from 'text-localizer';
-import { fetchUsTranslations } from './l10n/us';
+import { fetchItTranslations } from './l10n/it';
 
 (async () => {
   const localizer = new TextLocalizer<Languages, AppTranslations>({
-    it: import('./l10n/it.json'),
+    it: fetchItTranslations,
     en: import('./l10n/en'),
-    us: fetchUsTranslations,
+    us: import('./l10n/us.json'),
   });
 
   await localizer.setOptions({
@@ -14,9 +14,9 @@ import { fetchUsTranslations } from './l10n/us';
 
   const translations = localizer.translations;
 
-  console.log(translations.tab.check);
+  console.log(translations.question);
 
   console.log(
-    localizer.formatTranslation(translations.favouritesFun, { now: 'test' })
+    localizer.formatTranslation(translations.help, { topic: 'Text Localizer' })
   );
 })();
