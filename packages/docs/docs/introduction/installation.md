@@ -7,7 +7,7 @@ sidebar_position: 2
 TextLocalizer can be installed on any Javascript/Typescript project. To install it, simply open the terminal in your project's folder and install the library using **yarn**:
 
 ```shell
-yarn install text-localizer
+yarn add text-localizer
 ```
 
 or with **npm**:
@@ -25,7 +25,7 @@ If you're using **React** or **React Native** you can always install text-locali
 The **react-text-localizer** package simply wraps TextLocalizer in a [**React Context Provider**](https://reactjs.org/docs/context.html) and provides some supporting hooks. In order to install it run on your terminal:
 
 ```shell
-yarn install react-text-localizer
+yarn add react-text-localizer
 ```
 
 or with **npm**:
@@ -37,14 +37,14 @@ npm install react-text-localizer
 ### React Native
 
 The React Native solution exports the entire react-text-localizer and adds the getCurrentLanguage method.
-**getCurrentLanguage** allows you to know the language set by the user on the iOS/Android.
+**getCurrentLanguage** allows you to know the language set by the user on the iOS/Android Platforms.
 
 **In order to do this, it uses Native Modules. Therefore this package works only for React Native projects initialized with react-native-cli. If you're using Expo you can still use one of the two approaches presented above.**
 
 Then you can install the package from the terminal with **yarn**:
 
 ```shell
-yarn install react-native-text-localizer
+yarn add react-native-text-localizer
 ```
 
 or with **npm**:
