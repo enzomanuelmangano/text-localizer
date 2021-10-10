@@ -4,7 +4,7 @@ sidebar_position: 1
 
 # Motivation
 
-TextLocalizer is a package born out of the need to manage translations in a typesafe manner.
+Text Localizer is a package born out of the need to manage translations in a typesafe manner.
 Currently, the best-known solutions in javascript for managing translations are based on a key-value approach (i18n.js, i18next).
 
 This approach involves this way of accessing the individual translation.
@@ -25,12 +25,12 @@ Consequently, the goal of **TextLocalizer** is to provide a **lightweight**, **f
 ### Lightweight
 
 **The package must be easy to use and must not increase the size of the bundle.**
-Fortunately, TextLocalizer successfully achieves this by weighing less than **2kb** _minified_ and less than **1kb** _gzipped_.
+Fortunately, Text Localizer successfully achieves this by weighing less than **2kb** _minified_ and less than **1kb** _gzipped_.
 
 ### Fast
 
 **The package must not impact the start-up time in any way.**
-To achieve this, TextLocalizer extensively supports dynamic imports. This allows translations to be specified in files of type **JSON**, **TS** or **JS** and the translations can be passed into the TextLocalizer constructor via dynamic imports.
+To achieve this, Text Localizer extensively supports dynamic imports. This allows translations to be specified in files of type **JSON**, **TS** or **JS** and the translations can be passed into the Text Localizer constructor via dynamic imports.
 
 ```tsx
 const localizer = new TextLocalizer({
@@ -42,9 +42,9 @@ const localizer = new TextLocalizer({
 ### Flexible
 
 **The package must adapt to several use cases without affecting the architecture of the project.**
-This requirement is by far the most important one. In order to meet it, TextLocalizer allows several modes of operation.
+This requirement is by far the most important one. In order to meet it, Text Localizer allows several modes of operation.
 
-- **Inferred Types**: definitely the most convenient way to use TextLocalizer if all translations are available at compile-time. The great advantage of this approach is that in the development phase it is possible to have type-safety of the translations without any extra work.
+- **Inferred Types**: definitely the most convenient way to use Text Localizer if all translations are available at compile-time. The great advantage of this approach is that in the development phase it is possible to have type-safety of the translations without any extra work.
 - **Generated Types**: this approach is the most natural one if the strings of translations are only available at runtime. In this case, in the development phase, it will be necessary to run a script which will generate a .d.ts file containing the types of the translation strings.
 
-_Note_: Although these are the most natural ways of using TextLocalizer, this does not exclude the possibility of using an **"Inferred Types"** approach in the case of translation strings available at run-time, or of using a **"Generated Types"** approach in the case of translation strings available at compile-time.
+_Note_: Although these are the most natural ways of using Text Localizer, this does not exclude the possibility of using an **"Inferred Types"** approach in the case of translation strings available at run-time, or of using a **"Generated Types"** approach in the case of translation strings available at compile-time.

@@ -8,13 +8,14 @@ const darkTheme = require('prism-react-renderer/themes/dracula');
 const config = {
   title: 'Text Localizer',
   tagline: 'A lightweight, fast and flexible way to handle localized strings',
-  url: 'https://your-docusaurus-test-site.com',
+  url: 'https://enzomanuelmangano.github.io/',
   baseUrl: '/',
+  trailingSlash: false,
   onBrokenLinks: 'throw',
   onBrokenMarkdownLinks: 'warn',
   favicon: 'img/favicon.ico',
   organizationName: 'enzomanuelmangano',
-  projectName: 'text-localizer',
+  projectName: 'text-localizer.github.io',
 
   presets: [
     [
