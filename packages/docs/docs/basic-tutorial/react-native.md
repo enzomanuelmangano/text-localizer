@@ -4,7 +4,7 @@ sidebar_position: 3
 
 # React Native
 
-This section presents the project setup mode in React Native. As you might expect, many sections are shared between React Native and React.
+This section shows the project setup mode in React Native. As you might expect, many sections are shared between React Native and React.
 
 ## Setup
 

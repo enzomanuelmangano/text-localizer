@@ -4,10 +4,14 @@
  */
 
 .heroBanner {
-  padding: 4rem 0;
+  padding: 10rem 0;
   text-align: center;
   position: relative;
   overflow: hidden;
+}
+
+.heroBanner {
+  color: white;
 }
 
 @media screen and (max-width: 966px) {
@@ -20,4 +24,8 @@
   display: flex;
   align-items: center;
   justify-content: center;
+}
+
+.mainButton {
+  color: white;
 }

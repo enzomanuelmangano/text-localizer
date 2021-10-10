@@ -4,7 +4,7 @@ sidebar_position: 2
 
 # React
 
-This section presents the project setup mode in React. As the react-text-localizer package depends heavily on text-localizer itself, many sections are shared.
+This section shows the project setup mode in React. As the react-text-localizer package depends heavily on text-localizer itself, many sections are shared.
 
 ## Setup
 

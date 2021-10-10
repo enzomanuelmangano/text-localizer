@@ -7,14 +7,14 @@ const darkTheme = require('prism-react-renderer/themes/dracula');
 /** @type {import('@docusaurus/types').Config} */
 const config = {
   title: 'Text Localizer',
-  tagline: 'Dinosaurs are cool',
+  tagline: 'A lightweight, fast and flexible way to handle localized strings',
   url: 'https://your-docusaurus-test-site.com',
   baseUrl: '/',
   onBrokenLinks: 'throw',
   onBrokenMarkdownLinks: 'warn',
   favicon: 'img/favicon.ico',
-  organizationName: 'facebook', // Usually your GitHub org/user name.
-  projectName: 'docusaurus', // Usually your repo name.
+  organizationName: 'enzomanuelmangano',
+  projectName: 'text-localizer',
 
   presets: [
     [
@@ -50,7 +50,7 @@ const config = {
             label: 'Docs',
           },
           {
-            href: 'https://github.com/facebook/docusaurus',
+            href: 'https://github.com/enzomanuelmangano/text-localizer',
             label: 'GitHub',
             position: 'right',
           },

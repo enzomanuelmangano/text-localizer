@@ -16,32 +16,34 @@ type FeatureItem = {
 
 const FeatureList: FeatureItem[] = [
   {
-    title: 'Easy to Use',
+    title: 'Safe',
     image: '/img/undraw_docusaurus_mountain.svg',
     description: (
       <>
-        Docusaurus was designed from the ground up to be easily installed and
-        used to get your website up and running quickly.
+        Text Localizer is designed to prevent your errors by intercepting them
+        at compile-time.
       </>
     ),
   },
   {
-    title: 'Focus on What Matters',
+    title: 'Fast',
     image: '/img/undraw_docusaurus_tree.svg',
     description: (
       <>
-        Docusaurus lets you focus on your docs, and we&apos;ll do the chores. Go
-        ahead and move your docs into the <code>docs</code> directory.
+        Text Localizer makes extensive use of dynamic imports to improve
+        performance when initialising translations.
       </>
     ),
   },
   {
-    title: 'Powered by React',
+    title: 'Flexible',
     image: '/img/undraw_docusaurus_react.svg',
     description: (
       <>
-        Extend or customize your website layout by reusing React. Docusaurus can
-        be extended while reusing the same header and footer.
+        Do your translations live on the backend? Are your translations defined
+        locally? Do you need a docs for your translations? Text Localizer
+        attempts to answer each question while providing ample flexibility as
+        the project grows.
       </>
     ),
   },

@@ -15,10 +15,10 @@ function HomepageHeader() {
         <p className="hero__subtitle">{siteConfig.tagline}</p>
         <div className={styles.buttons}>
           <Link
-            className="button button--secondary button--lg"
+            className={'button button--secondary button--lg'}
             to="/docs/introduction/motivation"
           >
-            Docusaurus Tutorial - 5min ⏱️
+            Read Docs
           </Link>
         </div>
       </div>
@@ -27,11 +27,10 @@ function HomepageHeader() {
 }
 
 export default function Home(): JSX.Element {
-  const { siteConfig } = useDocusaurusContext();
   return (
     <Layout
-      title={`Hello from ${siteConfig.title}`}
-      description="Description will go into a meta tag in <head />"
+      title={`Home`}
+      description="A lightweight, fast and flexible way to handle localized strings."
     >
       <HomepageHeader />
       <main>
