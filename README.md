@@ -2,11 +2,11 @@
 📖 Text Localizer
 </h1>
 
-A lightweight, fast and flexible way to handle localized strings.
+_A lightweight, fast and flexible way to handle localized strings._
 
-[Documentation can be found here.](https://enzomanuelmangano.github.io/text-localizer/)
+[**Documentation can be found here.**](https://enzomanuelmangano.github.io/text-localizer/)
 
-## Why?
+## Motivation
 
 Text Localizer is a package born out of the need to manage translations in a typesafe manner. Currently, the best-known solutions in javascript for managing translations are based on a key-value approach (i18n.js, i18next).
 
