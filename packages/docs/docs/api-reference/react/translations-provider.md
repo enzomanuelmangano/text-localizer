@@ -13,7 +13,7 @@ To initialise it you must first define the [translationsContext](/docs/api-refer
 const Providers: React.FC = ({ children }) => (
   <TranslationsProvider
     context={translationsContext}
-    language="%%% YOUR_INITIAL_LANGUAGE %%"
+    language="%% YOUR_INITIAL_LANGUAGE %%"
   >
     {children}
   </TranslationsProvider>
