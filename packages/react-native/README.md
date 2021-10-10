@@ -1,27 +1,5 @@
-# react-native-text-localizer
+<h1 align="center">
+📖 React Text Localizer
+</h1>
 
-todo
-
-## Installation
-
-```sh
-npm install react-native-text-localizer
-```
-
-## Usage
-
-```js
-import { multiply } from "react-native-text-localizer";
-
-// ...
-
-const result = await multiply(3, 7);
-```
-
-## Contributing
-
-See the [contributing guide](CONTRIBUTING.md) to learn how to contribute to the repository and the development workflow.
-
-## License
-
-MIT
+[**Tutorial can be found here.**](https://enzomanuelmangano.github.io/text-localizer/docs/basic-tutorial/react-native)
