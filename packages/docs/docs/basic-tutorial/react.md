@@ -4,7 +4,7 @@ sidebar_position: 2
 
 # React
 
-This section presents the project setup mode in react. As the react-text-localizer package depends heavily on text-localizer itself, many sections are shared.
+This section presents the project setup mode in React. As the react-text-localizer package depends heavily on text-localizer itself, many sections are shared.
 
 ## Setup
 
@@ -102,7 +102,7 @@ As for the Text Localizer package, you can easily use the "Generated Types" appr
 yarn generate-l10n [translationsPath]
 ```
 
-Once the `translations.d.ts` is fully created, you can pass the Languages and AppTranslations types to the TextLocalizer in the Context Definition:
+Once the `translations.d.ts` is fully created, you can pass the Languages and AppTranslations types to the TextLocalizer in the [Context Definition](#context-definition):
 
 ```ts title="src/l10n/index.ts"
 import { TextLocalizer } from 'text-localizer';
