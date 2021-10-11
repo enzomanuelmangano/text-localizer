@@ -31,6 +31,7 @@ import {
   TranslationsProvider,
   useTranslations,
   useTranslationsState,
+  usePlatformLanguage,
 } from 'react-native-text-localizer';
 import { translationsContext } from './l10n';
 
@@ -50,9 +51,17 @@ const MainScreen: React.FC = () => {
 };
 
 const App = () => {
+  const platformLanguage = usePlatformLanguage();
+
+  if (platformLanguage == null) {
+    return null;
+  }
+
   return (
-    // If needed, you can retrieve the currentLanguage with the getCurrentLanguage() function
-    <TranslationsProvider context={translationsContext} language={'en'}>
+    <TranslationsProvider
+      context={translationsContext}
+      language={platformLanguage as 'it' | 'en' | 'us'}
+    >
       <MainScreen />
     </TranslationsProvider>
   );
