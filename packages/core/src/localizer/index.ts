@@ -109,7 +109,12 @@ class TextLocalizer<L extends string, T extends Record<string, any>> {
     }
 
     const translations = await parseTranslations(translationsInput);
-    if (!translations) throw Error(ErrorTypes.TranslationsParsing);
+    if (!translations) {
+      if (!this.languages.includes(language)) {
+        throw Error(ErrorTypes.WrongTranslationKey);
+      }
+      throw Error(ErrorTypes.TranslationsParsing);
+    }
 
     await this.storage?.set(language, translations);
     return translations;

@@ -15,7 +15,7 @@ class TextLocalizerModule(reactContext: ReactApplicationContext) : ReactContextB
 
     @ReactMethod
     fun getCurrentLanguage(promise: Promise) {
-      promise.resolve(Locale.getDefault().language)
+      promise.resolve(Locale.getDefault().toLanguageTag())
     }
 
 }

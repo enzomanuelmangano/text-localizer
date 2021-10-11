@@ -9,8 +9,7 @@ RCT_REMAP_METHOD(getCurrentLanguage,
                  withRejecter:(RCTPromiseRejectBlock)reject)
 {
   NSString* languageCode = [[NSLocale preferredLanguages] objectAtIndex:0];
-  NSArray *wordsArray  = [languageCode componentsSeparatedByString:@"-"];
-  resolve([wordsArray firstObject]);
+  resolve(languageCode);
 }
 
 @end

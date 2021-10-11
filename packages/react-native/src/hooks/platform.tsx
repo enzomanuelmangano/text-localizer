@@ -1,5 +1,6 @@
 import { useCallback, useEffect, useState } from 'react';
 import { getPlatformLanguage } from '../modules';
+import type { IsoCode } from './iso-codes';
 
 const usePlatformLanguage = () => {
   const [platformLanguage, setPlatformLanguage] = useState<IsoCode | null>(

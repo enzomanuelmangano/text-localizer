@@ -4,7 +4,6 @@ import {
   TranslationsProvider,
   useTranslations,
   useTranslationsState,
-  usePlatformLanguage,
 } from 'react-native-text-localizer';
 import { translationsContext } from './l10n';
 
@@ -24,18 +23,8 @@ const MainScreen: React.FC = () => {
 };
 
 const App = () => {
-  const platformLanguage = usePlatformLanguage();
-  console.log(platformLanguage);
-
-  if (platformLanguage == null) {
-    return null;
-  }
-
   return (
-    <TranslationsProvider
-      context={translationsContext}
-      language={platformLanguage as 'it' | 'uk' | 'us'}
-    >
+    <TranslationsProvider context={translationsContext} language={'us'}>
       <MainScreen />
     </TranslationsProvider>
   );
