@@ -36,8 +36,8 @@ npm install react-text-localizer
 
 ### React Native
 
-The React Native solution exports the entire react-text-localizer and adds the getCurrentLanguage method.
-**getCurrentLanguage** allows you to know the language set by the user on the iOS/Android Platforms.
+The React Native solution exports the entire react-text-localizer and adds the getPlatformLanguage method.
+**getPlatformLanguage** allows you to know the language set by the user on the iOS/Android Platforms.
 
 **In order to do this, it uses Native Modules. Therefore this package works only for React Native projects initialized with react-native-cli. If you're using Expo you can still use one of the two approaches presented above.**
 

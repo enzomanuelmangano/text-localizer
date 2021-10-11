@@ -39,7 +39,7 @@ export default {
 
 With Text Localizer, it is simply a matter of creating a _js/ts_ file and exporting the function with which the translations for that country are fetched.
 
-```ts title="src/l10n/it.ts
+```ts title="src/l10n/it.ts"
 // This function will return for instance this object:
 // {
 //   welcome: 'Benvenuto sulla documentazione di Text Localizer',
