@@ -17,4 +17,8 @@ const NativeTextLocalizer = NativeModules['TextLocalizer']
       }
     );
 
-export { NativeTextLocalizer };
+function getPlatformLanguage(): Promise<string> {
+  return NativeTextLocalizer.getCurrentLanguage();
+}
+
+export { getPlatformLanguage };

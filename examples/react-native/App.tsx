@@ -1,10 +1,10 @@
 import React from 'react';
 import { StyleSheet, Text, View } from 'react-native';
 import {
-  getCurrentLanguage,
   TranslationsProvider,
   useTranslations,
   useTranslationsState,
+  usePlatformLanguage,
 } from 'react-native-text-localizer';
 import { translationsContext } from './l10n';
 
@@ -24,12 +24,17 @@ const MainScreen: React.FC = () => {
 };
 
 const App = () => {
-  getCurrentLanguage().then((value) => {
-    console.log({ value });
-  });
+  const platformLanguage = usePlatformLanguage();
+
+  if (platformLanguage == null) {
+    return null;
+  }
 
   return (
-    <TranslationsProvider context={translationsContext} language={'en'}>
+    <TranslationsProvider
+      context={translationsContext}
+      language={platformLanguage as 'it' | 'en' | 'us'}
+    >
       <MainScreen />
     </TranslationsProvider>
   );
