@@ -32,17 +32,17 @@ Execution of this script will result in the definition of a declarations typescr
 
 /* eslint-disable */
 
-type en = import('text-localizer').TranslationsParser<{
+type uk = import('text-localizer').TranslationsParser<{
   /**
-   * @en Welcome on the Text Localizer Docs
+   * @uk Welcome on the Text Localizer Docs
    */
   welcome: 'Welcome on the Text Localizer Docs';
   /**
-   * @en Do you need some help about {{ topic }}?
+   * @uk Do you need some help about {{ topic }}?
    */
   help: 'Do you need some help about {{ topic }}?';
   /**
-   * @en Which is your favourite cat?
+   * @uk Which is your favourite cat?
    */
   question: 'Which is your favourite cat?';
 }>;
@@ -77,9 +77,9 @@ type us = import('text-localizer').TranslationsParser<{
   question: 'Which is your favorite cat?';
 }>;
 
-type AppTranslations = en | it | us;
+type AppTranslations = uk | it | us;
 
-type Languages = 'en' | 'it' | 'us';
+type Languages = 'uk' | 'it' | 'us';
 ```
 
 What is really important in this file is the declaration of two types:
@@ -97,12 +97,12 @@ import { fetchItTranslations } from './l10n/it';
 (async () => {
   const localizer = new TextLocalizer<Languages, AppTranslations>({
     us: import('./l10n/us.json'),
-    en: import('./l10n/en'),
+    uk: import('./l10n/uk'),
     it: fetchItTranslations,
   });
 
   await localizer.setOptions({
-    language: 'en',
+    language: 'uk',
   });
 
   const translations = localizer.translations;
@@ -118,5 +118,5 @@ import { fetchItTranslations } from './l10n/it';
 The advantages?
 
 - Server-side translations are truly type-safe;
-- The object passed into formatTranslation will give a compile-time error if it does not conform to the actual object requested;
+- The object passed into [formatTranslation](/docs/api-reference/text-localizer#formattranslation) will give a compile-time error if it does not conform to the actual object requested;
 - All translation strings will have a docs.

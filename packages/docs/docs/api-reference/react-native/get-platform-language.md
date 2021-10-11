@@ -9,6 +9,6 @@ The output conforms to the [**ISO 639-1**](https://en.wikipedia.org/wiki/List_of
 
 ```ts
 getPlatformLanguage().then((languageCode) => {
-  console.log(languageCode); // en | us | fr | de ...
+  console.log(languageCode); // uk | us | fr | de ...
 });
 ```

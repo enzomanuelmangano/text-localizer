@@ -5,7 +5,7 @@ import { fetchItTranslations } from './it';
 const translationsContext = createTranslationsContext(
   new TextLocalizer({
     it: fetchItTranslations,
-    en: import('./en'),
+    uk: import('./uk'),
     us: import('./us.json'),
   })
 );

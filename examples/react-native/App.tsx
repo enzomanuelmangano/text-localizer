@@ -25,6 +25,7 @@ const MainScreen: React.FC = () => {
 
 const App = () => {
   const platformLanguage = usePlatformLanguage();
+  console.log(platformLanguage);
 
   if (platformLanguage == null) {
     return null;
@@ -33,7 +34,7 @@ const App = () => {
   return (
     <TranslationsProvider
       context={translationsContext}
-      language={platformLanguage as 'it' | 'en' | 'us'}
+      language={platformLanguage as 'it' | 'uk' | 'us'}
     >
       <MainScreen />
     </TranslationsProvider>
