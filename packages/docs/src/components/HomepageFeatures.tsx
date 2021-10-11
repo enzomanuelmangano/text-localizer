@@ -17,7 +17,7 @@ type FeatureItem = {
 const FeatureList: FeatureItem[] = [
   {
     title: 'Safe',
-    image: '/img/undraw_docusaurus_mountain.svg',
+    image: 'img/safe.png',
     description: (
       <>
         Text Localizer is designed to prevent your errors by intercepting them
@@ -27,7 +27,7 @@ const FeatureList: FeatureItem[] = [
   },
   {
     title: 'Fast',
-    image: '/img/undraw_docusaurus_tree.svg',
+    image: 'img/fast.png',
     description: (
       <>
         Text Localizer makes extensive use of dynamic imports to improve
@@ -37,7 +37,7 @@ const FeatureList: FeatureItem[] = [
   },
   {
     title: 'Flexible',
-    image: '/img/undraw_docusaurus_react.svg',
+    image: 'img/flexible.png',
     description: (
       <>
         Do your translations live on the backend? Are your translations defined
@@ -55,7 +55,7 @@ function Feature({ title, image, description }: FeatureItem) {
       <div className="text--center">
         <img className={styles.featureSvg} alt={title} src={image} />
       </div>
-      <div className="text--center padding-horiz--md">
+      <div className="text--center padding--md">
         <h3>{title}</h3>
         <p>{description}</p>
       </div>
