@@ -34,15 +34,15 @@ Execution of this script will result in the definition of a declarations typescr
 
 type uk = import('text-localizer').TranslationsParser<{
   /**
-   * @en Welcome on the Text Localizer Docs
+   * @uk Welcome on the Text Localizer Docs
    */
   welcome: 'Welcome on the Text Localizer Docs';
   /**
-   * @en Do you need some help about {{ topic }}?
+   * @uk Do you need some help about {{ topic }}?
    */
   help: 'Do you need some help about {{ topic }}?';
   /**
-   * @en Which is your favourite cat?
+   * @uk Which is your favourite cat?
    */
   question: 'Which is your favourite cat?';
 }>;

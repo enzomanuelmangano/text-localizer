@@ -60,7 +60,7 @@ console.log(
 Returns the last language set by the [setOptions](#setoptions) function.
 
 ```ts
-console.log(localizer.currentLanguage); // eg: en
+console.log(localizer.currentLanguage); // eg: uk
 ```
 
 ### translations
