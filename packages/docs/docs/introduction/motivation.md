@@ -35,7 +35,7 @@ To achieve this, Text Localizer extensively supports dynamic imports. This allow
 ```tsx
 const localizer = new TextLocalizer({
   it: import('./l10n/it.json'),
-  en: import('./l10n/en'),
+  uk: import('./l10n/uk'),
 });
 ```
 

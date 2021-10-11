@@ -22,7 +22,7 @@ import { fetchItTranslations } from './it';
 const translationsContext = createTranslationsContext(
   new TextLocalizer({
     it: fetchItTranslations,
-    en: import('./l10n/en'),
+    uk: import('./l10n/uk'),
     us: import('./l10n/us.json'),
   })
 );
@@ -112,7 +112,7 @@ import { fetchItTranslations } from './it';
 const translationsContext = createTranslationsContext(
   new TextLocalizer<Languages, AppTranslations>({
     it: fetchItTranslations,
-    en: import('./l10n/en'),
+    uk: import('./l10n/uk'),
     us: import('./l10n/us.json'),
   })
 );

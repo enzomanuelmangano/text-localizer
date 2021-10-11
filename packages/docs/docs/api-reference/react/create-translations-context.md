@@ -8,13 +8,13 @@ createTranslationsContext is a utility function that aims to create a javascript
 
 - _A React Context;_
 - _The initial value of the React Context;_
-- _An instance of the TextLocalizer._
+- _An instance of the [Text Localizer](/docs/api-reference/text-localizer)._
 
 ```tsx
 const translationsContext = createTranslationsContext(
   new TextLocalizer({
     it: fetchItTranslations,
-    en: import('./l10n/en'),
+    uk: import('./l10n/uk'),
     us: import('./l10n/us.json'),
   })
 );

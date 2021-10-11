@@ -8,7 +8,7 @@ import { translationsContext } from './l10n';
 const Providers: React.FC = ({ children }) => (
   <TranslationsProvider
     context={translationsContext}
-    language="us"
+    language="uk"
     storage={localStorage}
   >
     {children}

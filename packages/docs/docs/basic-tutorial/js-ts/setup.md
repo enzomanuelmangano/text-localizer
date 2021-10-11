@@ -18,7 +18,7 @@ The use of JSON files to store translations is certainly the most common and the
 }
 ```
 
-Note: _"help"_ contains a formatted string, that can be easily managed with the formatTranslation function.
+Note: _"help"_ contains a formatted string, that can be easily managed with the [formatTranslation](/docs/api-reference/text-localizer#formattranslation) function.
 
 ## Javascript or Typescript
 
@@ -26,7 +26,7 @@ Although the Json is by far the most widely used solution in javascript for savi
 
 For example, in cases where only a few strings differ, using a typescript file can be extremely useful.
 
-```ts title="src/l10n/en.ts"
+```ts title="src/l10n/uk.ts"
 import us from './us.json';
 
 export default {
@@ -40,7 +40,7 @@ export default {
 With Text Localizer, it is simply a matter of creating a _js/ts_ file and exporting the function with which the translations for that country are fetched.
 
 ```ts title="src/l10n/it.ts"
-// This function will return for instance this object:
+// eg: this function will return this object
 // {
 //   welcome: 'Benvenuto sulla documentazione di Text Localizer',
 //   help: 'Hai bisogno di aiuto riguardo {{ topic }}?',

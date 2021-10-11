@@ -14,12 +14,12 @@ import { fetchItTranslations } from './l10n/it';
 (async () => {
   const localizer = new TextLocalizer({
     us: import('./l10n/us.json'),
-    en: import('./l10n/en'),
+    uk: import('./l10n/uk'),
     it: fetchItTranslations,
   });
 
   await localizer.setOptions({
-    language: 'en',
+    language: 'uk',
   });
 
   const translations = localizer.translations;
@@ -33,7 +33,7 @@ import { fetchItTranslations } from './l10n/it';
 ```
 
 The strings can then be easily accessed via textLocalizer.translations.
-If the string is specified as _formatted_ then the _formatTranslation_ function defined in the TextLocalizer class must be used.
+If the string is specified as _formatted_ then the [formatTranslation](/docs/api-reference/text-localizer#formattranslation) function defined in the TextLocalizer class must be used.
 The function accepts two parameters:
 
 - The string to be formatted;

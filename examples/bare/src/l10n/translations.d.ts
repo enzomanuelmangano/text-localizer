@@ -4,21 +4,6 @@
 
 /* eslint-disable */
 
-type en = import('text-localizer').TranslationsParser<{
-  /**
-   * @en Welcome on the Text Localizer Docs
-   */
-  welcome: 'Welcome on the Text Localizer Docs';
-  /**
-   * @en Do you need some help about {{ topic }}?
-   */
-  help: 'Do you need some help about {{ topic }}?';
-  /**
-   * @en Which is your favourite cat?
-   */
-  question: 'Which is your favourite cat?';
-}>;
-
 type it = import('text-localizer').TranslationsParser<{
   /**
    * @it Benvenuto sulla documentazione di Text Localizer
@@ -32,6 +17,21 @@ type it = import('text-localizer').TranslationsParser<{
    * @it Qual è il tuo gatto preferito?
    */
   question: 'Qual è il tuo gatto preferito?';
+}>;
+
+type uk = import('text-localizer').TranslationsParser<{
+  /**
+   * @uk Welcome on the Text Localizer Docs
+   */
+  welcome: 'Welcome on the Text Localizer Docs';
+  /**
+   * @uk Do you need some help about {{ topic }}?
+   */
+  help: 'Do you need some help about {{ topic }}?';
+  /**
+   * @uk Which is your favourite cat?
+   */
+  question: 'Which is your favourite cat?';
 }>;
 
 type us = import('text-localizer').TranslationsParser<{
@@ -49,6 +49,6 @@ type us = import('text-localizer').TranslationsParser<{
   question: 'Which is your favorite cat?';
 }>;
 
-type AppTranslations = en | it | us;
+type AppTranslations = it | uk | us;
 
-type Languages = 'en' | 'it' | 'us';
+type Languages = 'it' | 'uk' | 'us';
