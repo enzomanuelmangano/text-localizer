@@ -29,7 +29,7 @@ Remember to add tests for your change if possible. Run the unit tests by:
 yarn test
 ```
 
-## Commit message convention
+### Commit message convention
 
 We follow the [conventional commits specification](https://www.conventionalcommits.org/en) for our commit messages:
 
