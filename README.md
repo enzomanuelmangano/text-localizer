@@ -6,6 +6,14 @@ _A lightweight, fast and flexible way to handle localized strings._
 
 [**Documentation can be found here.**](https://enzomanuelmangano.github.io/text-localizer/)
 
+## Package Versions
+
+| Name                                                  |                                                                    Latest Version                                                                     |
+| ----------------------------------------------------- | :---------------------------------------------------------------------------------------------------------------------------------------------------: |
+| [text-localizer](/packages/core)                      |              [![badge](https://img.shields.io/npm/v/text-localizer.svg?style=flat-square)](https://www.npmjs.com/package/text-localizer)              |
+| [react-text-localizer](/packages/react)               |        [![badge](https://img.shields.io/npm/v/react-text-localizer.svg?style=flat-square)](https://www.npmjs.com/package/react-text-localizer)        |
+| [react-native-text-localizer](/packages/react-native) | [![badge](https://img.shields.io/npm/v/react-native-text-localizer.svg?style=flat-square)](https://www.npmjs.com/package/react-native-text-localizer) |
+
 ## Motivation
 
 Text Localizer is a package born out of the need to manage translations in a typesafe manner. Currently, the best-known solutions in javascript for managing translations are based on a key-value approach (i18n.js, i18next).
