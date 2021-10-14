@@ -3,3 +3,4 @@ export * from './context/create-translations-context';
 export * from './hooks/use-translations';
 export * from './hooks/use-translations-state';
 export * from './types';
+export * from 'text-localizer';
