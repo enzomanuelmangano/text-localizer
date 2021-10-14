@@ -1,8 +1,8 @@
 ---
-sidebar_position: 2
+sidebar_position: 3
 ---
 
-# Handle Translations
+# Usage
 
 Managing translations is now very simple. In order to do this, it is sufficient to initialise the Text Localizer by passing the Translation Record as input.
 Once this has been done, it is necessary to set the reference language. Given that the translations are passed as _Javascript Promises_, it is necessary to set the language using the asynchronous function **setOptions**.
