@@ -43,6 +43,9 @@
       }
     }
   },
+  "publishConfig": {
+    "registry": "https://registry.npmjs.org/"
+  },
   "keywords": [
     "localization",
     "react",
