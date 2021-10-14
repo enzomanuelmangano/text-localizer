@@ -13,7 +13,24 @@
     "lint": "eslint \"**/*.{js,ts,tsx}\"",
     "compile": "yarn tsc",
     "start": "yarn compile && node lib/index.js",
-    "typescript": "yarn compile --noEmit"
+    "typescript": "yarn compile --noEmit",
+    "release": "release-it"
+  },
+  "release-it": {
+    "git": {
+      "tagName": "react-text-localizer/${version}"
+    },
+    "npm": {
+      "publish": true
+    },
+    "github": {
+      "release": true
+    },
+    "plugins": {
+      "@release-it/conventional-changelog": {
+        "preset": "angular"
+      }
+    }
   },
   "keywords": [
     "localization",
@@ -28,13 +45,15 @@
   },
   "homepage": "https://github.com/enzomanuelmangano/text-localizer#readme",
   "dependencies": {
-    "text-localizer": "^0.0.1"
+    "text-localizer": "^0.1.0"
   },
   "devDependencies": {
     "@types/react": "^17.0.21",
     "react": "^17.0.2",
     "typescript": "^4.4.3",
-    "eslint-plugin-react": "^7.25.3"
+    "eslint-plugin-react": "^7.25.3",
+    "release-it": "^14.11.6",
+    "@release-it/conventional-changelog": "^3.3.0"
   },
   "peerDependencies": {
     "react": "*"

@@ -14,7 +14,24 @@
     "start": "yarn compile && node lib/index.js",
     "typescript": "yarn compile --noEmit",
     "generate-dts": "yarn compile && node lib/generate-declarations.js",
-    "test": "jest src"
+    "test": "jest src",
+    "release": "release-it"
+  },
+  "release-it": {
+    "git": {
+      "tagName": "text-localizer/${version}"
+    },
+    "npm": {
+      "publish": true
+    },
+    "github": {
+      "release": true
+    },
+    "plugins": {
+      "@release-it/conventional-changelog": {
+        "preset": "angular"
+      }
+    }
   },
   "bin": {
     "generate-l10n": "lib/generator/index.js"
@@ -36,6 +53,8 @@
   },
   "devDependencies": {
     "@types/node": "^16.9.1",
-    "eslint-config-google": "^0.14.0"
+    "eslint-config-google": "^0.14.0",
+    "release-it": "^14.11.6",
+    "@release-it/conventional-changelog": "^3.3.0"
   }
 }

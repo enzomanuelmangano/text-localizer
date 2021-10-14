@@ -9,7 +9,8 @@
     "test": "lerna run test -- --coverage",
     "compile": "lerna run compile",
     "typescript": "lerna run typescript",
-    "lint": "lerna run lint"
+    "lint": "lerna run lint",
+    "release": "lerna run release"
   },
   "commitlint": {
     "extends": [
