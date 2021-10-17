@@ -4,7 +4,38 @@ sidebar_position: 2
 
 # Strings
 
-Before translations can be used in the project, it is necessary to create the files where these translations will be stored. Using Text Localizer there are several ways of saving translation files depending on the need. The main solutions are presented below:
+Before translations can be used in the project, it is necessary to create the files where these translations will be stored. Using Text Localizer there are several ways of saving translation files depending on the need.
+
+:::info
+In this section, all possible solutions are implemented, but in a normal project, they don't all have to be used.
+:::
+
+### Folder Structure
+
+In order to continue the previous tutorial, create a folder called "l10n" where the translation files will be stored (there is no particular constraint on the name of the folder).
+Also, create three separate files in the new l10n folder:
+
+- _us.json_
+- _uk.ts_
+- _it.ts_
+
+These are the files that will be referenced in the rest of the project, but there is no limit to the amount of files you can add.
+
+```
+.
+├── package-lock.json
+├── tsconfig.json
+├── _node_modules
+├── _dist
+│   └── index.js
+├── _src
+│   ├── _l10n
+│   │   └── us.json
+│   │   └── uk.ts
+│   │   └── it.ts
+│   └── index.ts
+└── package.json
+```
 
 ## JSON
 
@@ -40,13 +71,14 @@ export default {
 With Text Localizer, it is simply a matter of creating a _js/ts_ file and exporting the function with which the translations for that country are fetched.
 
 ```ts title="src/l10n/it.ts"
-// eg: this function will return this object
-// {
-//   welcome: 'Benvenuto sulla documentazione di Text Localizer',
-//   help: 'Hai bisogno di aiuto riguardo {{ topic }}?',
-//   question: 'Qual è il tuo gatto preferito?',
-// }
-const fetchItTranslations = async () => { ...fetch translations logic... };
+// In this example fetchItTranslations simply returns a plain object.
+// The point is that it could be any asynchronous function
+// where maybe using axios, apollo or any other client.
+const fetchItTranslations = async () => ({
+  welcome: 'Benvenuto sulla documentazione di Text Localizer',
+  help: 'Hai bisogno di aiuto riguardo {{ topic }}?',
+  question: 'Qual è il tuo gatto preferito?',
+});
 
 export { fetchItTranslations };
 ```

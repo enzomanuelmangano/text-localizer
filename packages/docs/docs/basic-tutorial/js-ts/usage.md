@@ -7,7 +7,9 @@ sidebar_position: 3
 Managing translations is now very simple. In order to do this, it is sufficient to initialise the Text Localizer by passing the Translation Record as input.
 Once this has been done, it is necessary to set the reference language. Given that the translations are passed as _Javascript Promises_, it is necessary to set the language using the asynchronous function **setOptions**.
 
-```ts
+Regarding the tutorial, the index.ts will look like this:
+
+```ts title="src/index.ts"
 import { TextLocalizer } from 'text-localizer';
 import { fetchItTranslations } from './l10n/it';
 
@@ -38,3 +40,15 @@ The function accepts two parameters:
 
 - The string to be formatted;
 - An object having as keys the keys of the formatted string and as values, the values to be replaced.
+
+## How does the usage differ from other translation packages?
+
+- It has compile time support for translation strings: for instance you must follow the keys mentioned in the translation files otherwise the Typescript Compiler will complain;
+- Dynamic imports support;
+- It accepts translations as asynchronous functions in the constructor. This means that the translations could be either on an external server or locally.
+- Magical autocomplete and intellisense.
+
+There are cases where these features may not be enough. In that case, with a few additional configurations, you can use the following features:
+
+- Generated Types;
+- Cached Translations.

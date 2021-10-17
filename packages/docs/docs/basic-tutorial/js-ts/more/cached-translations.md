@@ -4,7 +4,7 @@ sidebar_position: 4
 
 # Cached Translations
 
-To handle this use case, Text Localizer provides the possibility of specifying the following parameters in the setOptions function:
+If the translations are not available locally or if they are possibly always updated on an external server, it may make sense to cache the results. To handle this use case, Text Localizer provides the possibility of specifying the following parameters in the setOptions function:
 
 - the _storage_;
 - the _storageKey_;

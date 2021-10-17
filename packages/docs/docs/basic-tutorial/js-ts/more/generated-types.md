@@ -4,9 +4,9 @@ sidebar_position: 3
 
 # Generated Types
 
-The approach presented in the Handle Translations section is certainly straightforward and instantly enables the use of type-safety.
+The approach presented in the Usage section is certainly straightforward and instantly enables the use of type-safety.
 However, it has some limitations that can be optionally overcome by choosing to generate types.
-The limitations to be overcome are:
+The limitations are:
 
 - There is no type-safety on types obtained from server-side translations;
 - There is no type-safety in the formatTranslation function.
