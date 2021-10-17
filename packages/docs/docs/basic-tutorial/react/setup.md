@@ -6,6 +6,10 @@ sidebar_position: 1
 
 This section shows the project setup mode in React. As the react-text-localizer package depends heavily on text-localizer itself, many sections are shared.
 
+:::info
+Before proceeding, note that the code you'll see in this section has already been implemented in the **examples/react** folder of the GitHub repo. [Click here to find out more](https://github.com/enzomanuelmangano/text-localizer/tree/main/examples/react).
+:::
+
 In order to follow this tutorial you will need to:
 
 - Have node installed;

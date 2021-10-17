@@ -18,6 +18,10 @@ If you are familiar with creating TS projects or if you already have an initiali
 Before you start, make sure you have npm installed.
 [You can install Node from here.](https://nodejs.org/en/download/)
 
+:::info
+Before proceeding, note that the code you'll see in this section has already been implemented in the **examples/bare** folder of the GitHub repo. [Click here to find out more](https://github.com/enzomanuelmangano/text-localizer/tree/main/examples/bare).
+:::
+
 ## Initialize Project
 
 To get started, create an empty folder and launch from the terminal:
