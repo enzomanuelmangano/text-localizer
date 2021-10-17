@@ -1,5 +1,5 @@
 ---
-sidebar_position: 2
+sidebar_position: 3
 ---
 
 # Context Definition
@@ -36,7 +36,6 @@ yarn generate-l10n [translationsPath]
 Once the `translations.d.ts` is fully created, you can pass the Languages and AppTranslations types to the TextLocalizer in the [Context Definition](#context-definition):
 
 ```ts title="src/l10n/index.ts"
-import { TextLocalizer } from 'text-localizer';
 import { createTranslationsContext } from 'react-text-localizer';
 import { fetchItTranslations } from './it';
 

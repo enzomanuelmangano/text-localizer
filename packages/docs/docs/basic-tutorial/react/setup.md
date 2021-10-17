@@ -34,10 +34,3 @@ Go to the **my-app** folder and check if everything is set correctly by launchin
 ```shell
 npm run start
 ```
-
-## Setup Translations Strings
-
-Now you need to create the files where the translations will be stored.
-Therefore create in the **src** directory the **l10n** folder and add the translation files. For simplicity in the tutorial I will use the same translation files used in the Typescript section.
-
-The project will have the following folder structure:

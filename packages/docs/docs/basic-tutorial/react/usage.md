@@ -4,8 +4,6 @@ sidebar_position: 4
 
 # Usage
 
-## Hooks
-
 Finally, thanks to the following hooks:
 
 - [useTranslationsState](/docs/api-reference/react/hooks/use-translations-state)
