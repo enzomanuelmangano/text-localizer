@@ -38,3 +38,11 @@ Go to the **my-app** folder and check if everything is set correctly by launchin
 ```shell
 npm run start
 ```
+
+### Install React Text Localizer
+
+In order to use the TextLocalizer features, simply run:
+
+```shell
+npm install react-text-localizer
+```
