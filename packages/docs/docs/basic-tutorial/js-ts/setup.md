@@ -10,7 +10,7 @@ This setup is for projects where you only want to use the Text Localizer core. T
 - You want to use TextLocalizer in a NodeJS project;
 - You use a front-end framework and want to use it to handle translations (Note that if you use [React](/docs/basic-tutorial/react/setup) or [React Native](/docs/basic-tutorial/react-native), there are portings already implemented to make your life easier).
 
-For simplicity's sake I'll assume npm is used as the package manager, but Yarn is also fine.
+For simplicity's sake **I'll assume npm is used as the package manager**, but feel free to use [**yarn**](https://yarnpkg.com/).
 In addition, the tutorial will be made taking into account Typescript, however you can also use Text Localizer in Javascript projects.
 
 If you are familiar with creating TS projects or if you already have an initialized project where you want to use the TextLocalizer you can skip this section.
