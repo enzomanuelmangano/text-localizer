@@ -56,7 +56,7 @@ To be able to use react-native-text-localizer it is needed to:
 - setup the [useTranslationsState](/docs/api-reference/react/hooks/use-translations-state) hook to understand the state of the translations;
 - setup the [useTranslations](/docs/api-reference/react/hooks/use-translations) hook to access the translations.
 
-Below is the code, which is mainly an adaptation of the code used for [React](/docs/basic-tutorial/react#hooks).
+Below is the code, which is mainly an adaptation of the code used for [React](/docs/basic-tutorial/react/setup):
 
 ```tsx title="src/App.tsx"
 import React from 'react';

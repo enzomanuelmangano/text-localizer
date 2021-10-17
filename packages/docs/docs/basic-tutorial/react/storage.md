@@ -4,7 +4,7 @@ sidebar_position: 6
 
 # Storage
 
-If your translations lives on the backend, you can pass **optionally** the [Storage params](/docs/basic-tutorial/js-ts/cached-translations) in the [TranslationsProvider](/docs/api-reference/react/translations-provider):
+If your translations lives on the backend, you can pass **optionally** the [Storage params](/docs/basic-tutorial/js-ts/more/cached-translations) in the [TranslationsProvider](/docs/api-reference/react/translations-provider):
 
 ```tsx title="src/index.tsx"
 import React from 'react';
