@@ -18,6 +18,7 @@
   },
   "release-it": {
     "git": {
+      "commitMessage": "chore: release react-text-localizer ${version}",
       "tagName": "react-text-localizer/${version}"
     },
     "npm": {
