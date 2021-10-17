@@ -73,7 +73,7 @@ Three additional parameters must be specified in the tsconfig.json file:
 
 The setup is almost ready, only a few steps to go:
 
-- create a directory called **src** in the root directory;
+- create a folder called **src** in the root directory;
 - create a file called **index.ts** in the **src** directory;
 - compile the typescript file into a javascript file and run it.
 
