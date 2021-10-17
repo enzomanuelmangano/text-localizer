@@ -1,13 +1,15 @@
 import { createContext } from 'react';
-import type { TextLocalizer } from 'text-localizer';
+import { TextLocalizer } from 'text-localizer';
+import type { TextLocalizerParams } from 'text-localizer';
 import type {
   TranslationsContextData,
   TranslationsContextType,
 } from '../types';
 
 function createTranslationsContext<L extends string, T>(
-  textLocalizer: TextLocalizer<L, T>
+  textLocalizerParams: TextLocalizerParams<L, T>
 ) {
+  const textLocalizer = new TextLocalizer<L, T>(textLocalizerParams);
   const initialTranslationsState = {
     error: null,
     languages: textLocalizer.languages,
