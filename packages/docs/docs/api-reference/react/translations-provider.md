@@ -5,9 +5,9 @@ sidebar_position: 3
 # TranslationsProvider
 
 The TranslationsProvider is the component that provides translations to all components in the component tree.
-It must therefore be initialised by wrapping all components.
+It must therefore be initialized by wrapping all components.
 
-To initialise it you must first define the [translationsContext](/docs/api-reference/react/create-translations-context).
+To initialize it you must first define the [translationsContext](/docs/api-reference/react/create-translations-context).
 
 ```tsx
 const Providers: React.FC = ({ children }) => (

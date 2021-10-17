@@ -28,11 +28,11 @@ In fact, translations can be enclosed in files of type [js, ts or json](/docs/ba
 
 Must be called to set the following options:
 
-- language: defines the language for which translations must be loaded;
-- fallback?: defines the language to use if an error happens;
-- storage?: defines the storage to be used in order to cache remote translations;
-- storageKey?: defines translations cache key (default: _@TEXT_LOCALIZER_STORAGE_KEY_);
-- cacheDurationMs?: defines the translations cache duration in milliseconds (default: _ONE_DAY_MS = 86400000_ )
+- _language_: defines the language for which translations must be loaded;
+- _fallback?_: defines the language to use if an error happens;
+- _storage?_: defines the storage to be used in order to cache remote translations;
+- _storageKey?_: defines translations cache key (default: _@TEXT_LOCALIZER_STORAGE_KEY_);
+- _cacheDurationMs?_: defines the translations cache duration in milliseconds (default: _ONE_DAY_MS = 86400000_ )
 
 The **storage** shall extend the following interface:
 

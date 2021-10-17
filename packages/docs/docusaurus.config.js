@@ -73,7 +73,7 @@ const config = {
             items: [
               {
                 label: 'React',
-                to: '/docs/basic-tutorial/react',
+                to: '/docs/basic-tutorial/react/setup',
               },
               {
                 label: 'React Native',
