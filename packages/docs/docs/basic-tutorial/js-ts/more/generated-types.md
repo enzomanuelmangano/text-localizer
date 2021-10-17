@@ -11,21 +11,21 @@ The limitations are:
 - There is no type-safety on types obtained from server-side translations;
 - There is no type-safety in the formatTranslation function.
 
-You can therefore decide to generate all the types you need using the "generate-l10n" script in this way:
+You can decide to generate all the types you need using the _"generate-l10n"_ script in this way:
 
 ```shell
-yarn generate-l10n [translationsPath]
+npm run generate-l10n [translationsPath]
 ```
 
-Where translationsPath is the path where all the translation files are located. For example, assuming all translations are located in the src/l10n folder, the script would be run as follows:
+Where translationsPath is the path where all the translation files are located. For example, assuming all translations are located in the _src/l10n_ folder, the script would be run as follows:
 
 ```shell
-yarn generate-l10n src/l10n
+npm generate-l10n src/l10n
 ```
 
-Execution of this script will result in the definition of a declarations typescript file called: 'translations.d.ts'. And it will have the following structure.
+Execution of this script will result in the definition of a declarations typescript file called: _'translations.d.ts'_. And it will have the following structure.
 
-```ts title="/src/l10n/translations.d.ts"
+```ts title="src/l10n/translations.d.ts"
 /*
  * GENERATED CODE - DO NOT MODIFY BY HAND
  */
@@ -90,7 +90,7 @@ What is really important in this file is the declaration of two types:
 These two types will simply have to be added at the creation stage of the TextLocalizer as generics.
 For the sake of clarity, taking the previous code, the result will be this:
 
-```ts
+```ts title="src/index.ts"
 import { TextLocalizer } from 'text-localizer';
 import { fetchItTranslations } from './l10n/it';
 

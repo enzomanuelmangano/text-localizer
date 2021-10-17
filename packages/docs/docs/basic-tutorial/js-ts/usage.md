@@ -4,8 +4,8 @@ sidebar_position: 3
 
 # Usage
 
-Managing translations is now very simple. In order to do this, it is sufficient to initialise the Text Localizer by passing the Translation Record as input.
-Once this has been done, it is necessary to set the reference language. Given that the translations are passed as _Javascript Promises_, it is necessary to set the language using the asynchronous function **setOptions**.
+Managing translations is now very simple. In order to do this, it is sufficient to initialize the Text Localizer by passing the Translation Record as input.
+Once this has been done, it's necessary to set the reference language. Given that the translations are passed as _Javascript Promises_, it is necessary to set the language using the asynchronous function [**setOptions**](/docs/api-reference/text-localizer#setoptions).
 
 Regarding the tutorial, the index.ts will look like this:
 
@@ -50,5 +50,5 @@ The function accepts two parameters:
 
 There are cases where these features may not be enough. In that case, with a few additional configurations, you can use the following features:
 
-- Generated Types;
-- Cached Translations.
+- [Generated Types](/docs/basic-tutorial/js-ts/more/generated-types);
+- [Cached Translations](/docs/basic-tutorial/js-ts/more/cached-translations).

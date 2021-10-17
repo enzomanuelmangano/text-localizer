@@ -5,7 +5,7 @@ sidebar_position: 1
 # Motivation
 
 Text Localizer is a package born out of the need to manage translations in a typesafe manner.
-Currently, the best-known solutions in javascript for managing translations are based on a key-value approach (i18n.js, i18next).
+Currently, the best-known solutions in javascript for managing translations are based on a key-value approach ([i18n.js](https://github.com/fnando/i18n-js), [i18next](https://github.com/i18next/i18next)).
 
 This approach involves this way of accessing the individual translation.
 

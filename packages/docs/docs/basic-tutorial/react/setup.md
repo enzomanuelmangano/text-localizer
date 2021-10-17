@@ -12,8 +12,8 @@ Before proceeding, note that the code you'll see in this section has already bee
 
 In order to follow this tutorial you will need to:
 
-- Have node installed;
-- Create-react-app installed.
+- Have [NodeJS](https://nodejs.org/en/download/) installed;
+- Have [create-react-app](https://github.com/facebook/create-react-app) installed.
 
 [You can install Node from here.](https://nodejs.org/en/download/)
 

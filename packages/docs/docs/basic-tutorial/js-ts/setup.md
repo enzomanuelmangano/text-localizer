@@ -6,9 +6,9 @@ sidebar_position: 1
 
 This setup is for projects where you only want to use the Text Localizer core. This may make sense if:
 
-- You want to experiment with TextLocalizer;
-- You want to use TextLocalizer on a node project;
-- You use a front-end framework and want to use it to handle translations (Note that if you use React or React Native, there are portings already implemented to make your life easier).
+- You want to experiment with [TextLocalizer](/docs/api-reference/text-localizer);
+- You want to use TextLocalizer in a NodeJS project;
+- You use a front-end framework and want to use it to handle translations (Note that if you use [React](/docs/basic-tutorial/react/setup) or [React Native](/docs/basic-tutorial/react-native), there are portings already implemented to make your life easier).
 
 For simplicity's sake I'll assume npm is used as the package manager, but Yarn is also fine.
 In addition, the tutorial will be made taking into account Typescript, however you can also use Text Localizer in Javascript projects.
@@ -59,9 +59,9 @@ tsc --init
 
 Three additional parameters must be specified in the tsconfig.json file:
 
-- **outDir**: the folder where the compiled javascript files are located;
-- **resolveJsonModule**: must be set to true since we are going to use json files in the project;
-- **target**: must be specified esnext to support the latest javascript features.
+- [**outDir**](https://www.typescriptlang.org/tsconfig#outDir): the folder where the compiled javascript files are located;
+- [**resolveJsonModule**](https://www.typescriptlang.org/tsconfig#resolveJsonModule): must be set to true since we are going to use json files in the project;
+- [**target**](https://www.typescriptlang.org/tsconfig#target): must be specified ESNext to support the latest javascript features.
 
 ```json title="tsconfig.json"
 {

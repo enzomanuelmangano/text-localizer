@@ -12,7 +12,7 @@ In this section, all possible solutions are implemented, but in a normal project
 
 ### Folder Structure
 
-In order to continue the previous tutorial, create a folder called "l10n" where the translation files will be stored (there is no particular constraint on the name of the folder).
+In order to continue the previous tutorial, create a folder called _"l10n"_ where the translation files will be stored (there is no particular constraint on the name of the folder).
 Also, create three separate files in the new l10n folder:
 
 - _us.json_

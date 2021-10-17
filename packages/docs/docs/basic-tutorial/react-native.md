@@ -26,18 +26,19 @@ npx react-native init AwesomeTSProject --template react-native-template-typescri
 
 Before proceeding with the usage of react-native-text-localizer, it's necessary to create the translation files.
 
-[This section is identical for React and React Native.](/docs/basic-tutorial/react#context-definition)
+[This section is identical for React and React Native.](/docs/basic-tutorial/react/strings)
 
 ## Context Definition
 
 Once the translation files have been created, it's essential to create a React Context that allows access to all of them.
-[This section is identical for React and React Native.](/docs/basic-tutorial/react#context-definition)
+
+[This section is identical for React and React Native.](/docs/basic-tutorial/react/context-definition)
 
 ## Usage
 
 To be able to use react-native-text-localizer it is needed to:
 
-- Initialise the [TranslationsProvider](/docs/api-reference/react/translations-provider) by wrapping the whole app;
+- Initialize the [TranslationsProvider](/docs/api-reference/react/translations-provider) by wrapping the whole app;
 - setup the [useTranslationsState](/docs/api-reference/react/hooks/use-translations-state) hook to understand the state of the translations;
 - setup the [useTranslations](/docs/api-reference/react/hooks/use-translations) hook to access the translations.
 
