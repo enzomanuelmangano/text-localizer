@@ -49,7 +49,7 @@
   },
   "homepage": "https://github.com/enzomanuelmangano/text-localizer#readme",
   "dependencies": {
-    "text-localizer": "^0.1.0"
+    "text-localizer": "^0.1.2"
   },
   "devDependencies": {
     "@types/react": "^17.0.21",
