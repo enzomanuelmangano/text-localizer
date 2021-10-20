@@ -22,12 +22,12 @@ Initialize a React Native Project with Typescript by launching the following com
 npx react-native init AwesomeTSProject --template react-native-template-typescript
 ```
 
-### Install React Text Localizer
+### Install React Native Text Localizer
 
-In order to unlock TextLocalizer, run:
+In order to install text-localizer in react-native, run:
 
 ```shell
-npm install react-text-localizer
+npm install react-native-text-localizer
 ```
 
 If you're on iOS, make sure also to run:
