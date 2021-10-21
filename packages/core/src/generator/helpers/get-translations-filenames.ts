@@ -15,8 +15,15 @@ export const acceptedExtensions: TranslationsFileName['ext'][] = [
 ];
 
 export const isTranslationsFilename = (filename: string): boolean => {
+  const [name, fileExt] = filename.split('.');
+  if (name === 'index') return false;
+
   return acceptedExtensions
-    .map((ext) => filename.includes(ext) && filename.split('.')?.[1] === ext)
+    .map(
+      (ext) =>
+        // check valid extension
+        filename.includes(ext) && fileExt === ext
+    )
     .includes(true);
 };
 
