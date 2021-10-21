@@ -17,6 +17,10 @@ You can decide to generate all the types you need using the _"generate-l10n"_ sc
 npm run generate-l10n [translationsPath]
 ```
 
+:::caution
+If the script fails, make sure that the **"module"** specified in the **tsconfig.json** file is **"CommonJS"** (at least while the script is running).
+:::
+
 Where translationsPath is the path where all the translation files are located. For example, assuming all translations are located in the _src/l10n_ folder, the script would be run as follows:
 
 ```shell
