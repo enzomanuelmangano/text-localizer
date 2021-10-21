@@ -2,5 +2,14 @@
   "packages": ["packages/*", "examples/*"],
   "version": "independent",
   "npmClient": "yarn",
-  "useWorkspaces": true
+  "useWorkspaces": true,
+  "command": {
+    "publish": {
+      "allowBranch": "main",
+      "conventionalCommits": true,
+      "createRelease": "github",
+      "message": "chore(release): publish",
+      "ignoreChanges": ["**/*.md", "**/example/**"]
+    }
+  }
 }

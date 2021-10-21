@@ -1,6 +1,6 @@
 {
   "name": "myapp",
-  "version": "0.0.1",
+  "version": "0.1.3",
   "private": true,
   "scripts": {
     "android": "react-native run-android",
@@ -10,10 +10,10 @@
     "lint": "eslint . --ext .js,.jsx,.ts,.tsx"
   },
   "dependencies": {
+    "get-yarn-workspaces": "^1.0.2",
     "react": "17.0.2",
     "react-native": "0.65.1",
-    "get-yarn-workspaces": "^1.0.2",
-    "react-native-text-localizer": "^0.1.0"
+    "react-native-text-localizer": "^0.1.3"
   },
   "devDependencies": {
     "@babel/core": "^7.12.9",
