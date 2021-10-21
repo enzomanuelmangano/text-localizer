@@ -6,6 +6,10 @@ _A lightweight, fast and flexible way to handle localized strings._
 
 [**Documentation can be found here.**](https://enzomanuelmangano.github.io/text-localizer/)
 
+<div align="center">
+    <img src="https://github.com/enzomanuelmangano/text-localizer/blob/main/.assets/demo.gif" title="react-text-localizer-demo">
+</div>
+
 ## Package Versions
 
 | Name                                                  |                                                                    Latest Version                                                                     |
