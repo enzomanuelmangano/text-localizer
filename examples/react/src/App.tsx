@@ -3,7 +3,7 @@ import './App.css';
 import { translationsContext } from './l10n';
 
 function App() {
-  const { welcome } = useTranslations(translationsContext);
+  const { help, formatTranslation } = useTranslations(translationsContext);
   const { isLoading } = useTranslationsState(translationsContext);
 
   if (isLoading) return null;
@@ -20,7 +20,7 @@ function App() {
           target="_blank"
           rel="noopener noreferrer"
         >
-          {welcome}
+          {formatTranslation(help, { topic: 'Text Localizer' })}
         </a>
       </header>
     </div>
