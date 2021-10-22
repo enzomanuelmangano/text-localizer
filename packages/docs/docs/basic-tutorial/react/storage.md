@@ -18,7 +18,7 @@ ReactDOM.render(
   <React.StrictMode>
     <TranslationsProvider
       context={translationsContext}
-      language="uk"
+      language="gb"
       storage={localStorage}
     >
       <App />

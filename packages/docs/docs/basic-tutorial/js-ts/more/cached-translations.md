@@ -12,7 +12,7 @@ If the translations are not available locally or if they are possibly always upd
 
 ```ts
   await localizer.setOptions({
-    language: 'uk',
+    language: 'gb',
     storage: myStorage,
     storageKey: '@MY_STORAGE_KEY'
     cacheDurationMs: ONE_DAY_MS,

@@ -24,7 +24,7 @@ const MainScreen: React.FC = () => {
 
 const App = () => {
   return (
-    <TranslationsProvider context={translationsContext} language={'us'}>
+    <TranslationsProvider context={translationsContext} language={'gb'}>
       <MainScreen />
     </TranslationsProvider>
   );

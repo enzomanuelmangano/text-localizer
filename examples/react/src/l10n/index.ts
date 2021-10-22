@@ -6,7 +6,7 @@ const translationsContext = createTranslationsContext<
   AppTranslations
 >({
   it: fetchItTranslations,
-  uk: import('./uk'),
+  gb: import('./gb'),
   us: import('./us.json'),
 });
 

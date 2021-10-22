@@ -31,7 +31,7 @@ These are the files that will be referenced in the rest of the project, but ther
 ├── _src
 │   ├── _l10n
 │   │   └── us.json
-│   │   └── uk.ts
+│   │   └── gb.ts
 │   │   └── it.ts
 │   └── index.ts
 └── package.json
@@ -57,7 +57,7 @@ Although the Json is by far the most widely used solution in javascript for savi
 
 For example, in cases where only a few strings differ, using a typescript file can be extremely useful.
 
-```ts title="src/l10n/uk.ts"
+```ts title="src/l10n/gb.ts"
 import us from './us.json';
 
 export default {

@@ -17,7 +17,7 @@ For the sake of clarity here's the files:
 }
 ```
 
-```ts title="src/l10n/uk.ts"
+```ts title="src/l10n/gb.ts"
 import us from './us.json';
 
 export default {
@@ -44,7 +44,7 @@ The project will have the following folder structure:
 ├── _src
 │   ├── _l10n
 │   │   ├── us.json
-│   │   ├── uk.ts
+│   │   ├── gb.ts
 │   │   └── it.ts
 │   ├── ...
 │   └── App.tsx

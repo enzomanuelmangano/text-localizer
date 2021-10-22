@@ -36,17 +36,17 @@ Execution of this script will result in the definition of a declarations typescr
 
 /* eslint-disable */
 
-type uk = import('text-localizer').TranslationsParser<{
+type gb = import('text-localizer').TranslationsParser<{
   /**
-   * @uk Welcome on the Text Localizer Docs
+   * @gb Welcome on the Text Localizer Docs
    */
   welcome: 'Welcome on the Text Localizer Docs';
   /**
-   * @uk Do you need some help about {{ topic }}?
+   * @gb Do you need some help about {{ topic }}?
    */
   help: 'Do you need some help about {{ topic }}?';
   /**
-   * @uk Which is your favourite cat?
+   * @gb Which is your favourite cat?
    */
   question: 'Which is your favourite cat?';
 }>;
@@ -81,9 +81,9 @@ type us = import('text-localizer').TranslationsParser<{
   question: 'Which is your favorite cat?';
 }>;
 
-type AppTranslations = uk | it | us;
+type AppTranslations = gb | it | us;
 
-type Languages = 'uk' | 'it' | 'us';
+type Languages = 'gb' | 'it' | 'us';
 ```
 
 What is really important in this file is the declaration of two types:
@@ -101,12 +101,12 @@ import { fetchItTranslations } from './l10n/it';
 (async () => {
   const localizer = new TextLocalizer<Languages, AppTranslations>({
     us: import('./l10n/us.json'),
-    uk: import('./l10n/uk'),
+    gb: import('./l10n/gb'),
     it: fetchItTranslations,
   });
 
   await localizer.setOptions({
-    language: 'uk',
+    language: 'gb',
   });
 
   const translations = localizer.translations;

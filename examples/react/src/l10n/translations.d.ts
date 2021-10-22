@@ -19,17 +19,17 @@ type it = import('text-localizer').TranslationsParser<{
   question: 'Qual è il tuo gatto preferito?';
 }>;
 
-type uk = import('text-localizer').TranslationsParser<{
+type gb = import('text-localizer').TranslationsParser<{
   /**
-   * @uk Welcome on the Text Localizer Docs
+   * @gb Welcome on the Text Localizer Docs
    */
   welcome: 'Welcome on the Text Localizer Docs';
   /**
-   * @uk Do you need some help about {{ topic }}?
+   * @gb Do you need some help about {{ topic }}?
    */
   help: 'Do you need some help about {{ topic }}?';
   /**
-   * @uk Which is your favourite cat?
+   * @gb Which is your favourite cat?
    */
   question: 'Which is your favourite cat?';
 }>;
@@ -49,6 +49,6 @@ type us = import('text-localizer').TranslationsParser<{
   question: 'Which is your favorite cat?';
 }>;
 
-type AppTranslations = it | uk | us;
+type AppTranslations = it | gb | us;
 
-type Languages = 'it' | 'uk' | 'us';
+type Languages = 'it' | 'gb' | 'us';

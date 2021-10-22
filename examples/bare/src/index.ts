@@ -4,12 +4,12 @@ import { fetchItTranslations } from './l10n/it';
 (async () => {
   const localizer = new TextLocalizer<Languages, AppTranslations>({
     it: fetchItTranslations,
-    uk: import('./l10n/uk'),
+    gb: import('./l10n/gb'),
     us: import('./l10n/us.json'),
   });
 
   await localizer.setOptions({
-    language: 'uk',
+    language: 'gb',
   });
 
   const translations = localizer.translations;

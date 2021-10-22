@@ -3,7 +3,7 @@ import { fetchItTranslations } from './it';
 
 const translationsContext = createTranslationsContext({
   it: fetchItTranslations,
-  uk: import('./uk'),
+  gb: import('./gb'),
   us: import('./us.json'),
 });
 

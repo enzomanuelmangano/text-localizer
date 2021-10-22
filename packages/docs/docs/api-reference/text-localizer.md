@@ -10,12 +10,12 @@ In concrete terms, it is implemented as a class that accepts as constructor para
 ```tsx
 const localizer = new TextLocalizer({
   it: import('./l10n/it.json'),
-  uk: import('./l10n/uk'),
+  gb: import('./l10n/gb'),
   us: fetchUsTranslations,
 });
 
 await localizer.setOptions({
-  language: 'uk',
+  language: 'gb',
 });
 ```
 
@@ -60,7 +60,7 @@ console.log(
 Returns the last language set by the [setOptions](#setoptions) function.
 
 ```ts
-console.log(localizer.currentLanguage); // eg: uk
+console.log(localizer.currentLanguage); // eg: gb
 ```
 
 ### translations
@@ -82,5 +82,5 @@ console.log(localizer.translations);
 Returns all supported languages.
 
 ```ts
-console.log(localizer.languages); // uk | it | us ...
+console.log(localizer.languages); // gb | it | us ...
 ```
