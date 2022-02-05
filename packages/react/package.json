@@ -1,6 +1,6 @@
 {
   "name": "react-text-localizer",
-  "version": "0.1.3",
+  "version": "0.1.4",
   "license": "MIT",
   "main": "lib/index.js",
   "types": "lib/index.d.ts",
@@ -49,7 +49,7 @@
   },
   "homepage": "https://github.com/enzomanuelmangano/text-localizer#readme",
   "dependencies": {
-    "text-localizer": "^0.1.3"
+    "text-localizer": "^0.1.4"
   },
   "devDependencies": {
     "@release-it/conventional-changelog": "^3.3.0",
