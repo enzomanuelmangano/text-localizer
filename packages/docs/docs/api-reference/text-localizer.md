@@ -9,8 +9,8 @@ In concrete terms, it is implemented as a class that accepts as constructor para
 
 ```tsx
 const localizer = new TextLocalizer({
-  it: import('./l10n/it.json'),
-  gb: import('./l10n/gb'),
+  it: () => import('./l10n/it.json'),
+  gb: () => import('./l10n/gb'),
   us: fetchUsTranslations,
 });
 

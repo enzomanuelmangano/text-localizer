@@ -15,8 +15,8 @@ import { fetchItTranslations } from './l10n/it';
 
 (async () => {
   const localizer = new TextLocalizer({
-    us: import('./l10n/us.json'),
-    gb: import('./l10n/gb'),
+    us: () => import('./l10n/us.json'),
+    gb: () => import('./l10n/gb'),
     it: fetchItTranslations,
   });
 

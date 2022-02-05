@@ -14,8 +14,8 @@ import { fetchItTranslations } from './it';
 
 const translationsContext = createTranslationsContext({
   it: fetchItTranslations,
-  gb: import('./l10n/gb'),
-  us: import('./l10n/us.json'),
+  gb: () => import('./l10n/gb'),
+  us: () => import('./l10n/us.json'),
 });
 
 export { translationsContext };
@@ -44,8 +44,8 @@ const translationsContext = createTranslationsContext<
   AppTranslations
 >({
   it: fetchItTranslations,
-  gb: import('./l10n/gb'),
-  us: import('./l10n/us.json'),
+  gb: () => import('./l10n/gb'),
+  us: () => import('./l10n/us.json'),
 });
 
 export { translationsContext };

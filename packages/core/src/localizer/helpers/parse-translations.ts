@@ -8,7 +8,10 @@ export const parseTranslations = async <T>(
       | (() => TranslationStrings<T>)
       | (() => Promise<TranslationStrings<T>>);
 
-    return (await functionParam()) as T;
+    const result = await functionParam();
+
+    if ((result as any)?.['default']) return (result as any)?.['default'] as T;
+    return result as T;
   }
 
   let translations = (await param) as any;

@@ -13,8 +13,8 @@ createTranslationsContext is a utility function that aims to create a javascript
 ```tsx
 const translationsContext = createTranslationsContext({
   it: fetchItTranslations,
-  gb: import('./l10n/gb'),
-  us: import('./l10n/us.json'),
+  gb: () => import('./l10n/gb'),
+  us: () => import('./l10n/us.json'),
 });
 ```
 

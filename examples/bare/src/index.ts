@@ -4,8 +4,8 @@ import { fetchItTranslations } from './l10n/it';
 (async () => {
   const localizer = new TextLocalizer<Languages, AppTranslations>({
     it: fetchItTranslations,
-    gb: import('./l10n/gb'),
-    us: import('./l10n/us.json'),
+    gb: () => import('./l10n/gb'),
+    us: () => import('./l10n/us.json'),
   });
 
   await localizer.setOptions({
@@ -14,6 +14,7 @@ import { fetchItTranslations } from './l10n/it';
 
   const translations = localizer.translations;
 
+  console.log(translations);
   console.log(translations.question);
 
   console.log(
